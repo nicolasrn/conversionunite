@@ -1,4 +1,4 @@
-package cor;
+package cor.money;
 
 import java.util.ArrayList;
 
@@ -11,6 +11,7 @@ import conversion.Unite;
 import conversion.factory.FactoryDollar;
 import conversion.factory.FactoryEuro;
 import conversion.factory.FactoryYen;
+import cor.CORSpe;
 import cor.generique.COR;
 
 public class RechercheMoney extends CORSpe {

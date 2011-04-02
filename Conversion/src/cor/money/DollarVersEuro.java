@@ -1,9 +1,10 @@
-package cor;
+package cor.money;
 
 import conversion.Grandeur;
 import conversion.Unite;
 import conversion.factory.FactoryDollar;
 import conversion.factory.FactoryEuro;
+import cor.CORSpe;
 import cor.generique.COR;
 
 public class DollarVersEuro extends CORSpe {

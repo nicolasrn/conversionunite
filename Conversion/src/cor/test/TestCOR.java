@@ -1,8 +1,8 @@
 package cor.test;
 
 import cor.CORSpe;
-import cor.DollarVersEuro;
-import cor.EuroVersYen;
+import cor.money.DollarVersEuro;
+import cor.money.EuroVersYen;
 import junit.framework.TestCase;
 
 
