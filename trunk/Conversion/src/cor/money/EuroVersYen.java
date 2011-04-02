@@ -1,9 +1,10 @@
-package cor;
+package cor.money;
 
 import conversion.Grandeur;
 import conversion.Unite;
 import conversion.factory.FactoryEuro;
 import conversion.factory.FactoryYen;
+import cor.CORSpe;
 import cor.generique.COR;
 
 public class EuroVersYen extends CORSpe {

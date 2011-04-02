@@ -1,9 +1,9 @@
 package cor.factory;
 
 import cor.CORSpe;
-import cor.DollarVersEuro;
-import cor.EuroVersYen;
-import cor.RechercheMoney;
+import cor.money.DollarVersEuro;
+import cor.money.EuroVersYen;
+import cor.money.RechercheMoney;
 
 public class ConvertisseurMoney implements ICreerCOR
 {
