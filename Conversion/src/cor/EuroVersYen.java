@@ -22,7 +22,7 @@ public class EuroVersYen extends CORSpe {
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(new FactoryYen().creerUnite()) && source.getUnite().equals(new FactoryEuro().creerUnite()))
-			g = new Grandeur(Math.round(source.getValue() * 0.705119165), probleme);  
+			g = new Grandeur(source.getValue() * 0.705119165, probleme);  
 		
 		return g;
 	}

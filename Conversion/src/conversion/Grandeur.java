@@ -5,7 +5,7 @@ import cor.CORSpe;
 import cor.factory.ICreerCOR;
 
 public class Grandeur implements Cloneable {
-	private long value;
+	private double value;
 	
 	private Unite unite;
 	
@@ -16,7 +16,7 @@ public class Grandeur implements Cloneable {
 	 * @param value
 	 * @param unite
 	 */
-	public Grandeur(long value, Unite unite)
+	public Grandeur(double value, Unite unite)
 	{
 		this.value = value;
 		this.unite = unite;
@@ -27,7 +27,7 @@ public class Grandeur implements Cloneable {
 	 * @param value
 	 * @param factory
 	 */
-	public Grandeur(long value, ICreationUnite factory)
+	public Grandeur(double value, ICreationUnite factory)
 	{
 		this(value, factory.creerUnite());
 	}
@@ -72,14 +72,14 @@ public class Grandeur implements Cloneable {
 	/**
 	 * @return the value
 	 */
-	public long getValue() {
+	public double getValue() {
 		return value;
 	}
 	
 	/**
 	 * @param value the value to set
 	 */
-	public void setValue(long value) {
+	public void setValue(double value) {
 		this.value = value;
 	}
 	
