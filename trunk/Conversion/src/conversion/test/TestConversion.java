@@ -33,7 +33,7 @@ public class TestConversion extends TestCase
 	
 	public void testConversion()
 	{
-		Grandeur a = new Grandeur(14, new FactoryDollar());
+		Grandeur a = new Grandeur(14.3, new FactoryDollar());
 		a.setConvertisseur(new ConvertisseurMoney());
 		
 		Grandeur dest;

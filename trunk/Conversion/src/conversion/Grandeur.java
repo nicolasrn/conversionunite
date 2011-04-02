@@ -1,5 +1,7 @@
 package conversion;
 
+import java.text.NumberFormat;
+
 import conversion.factory.ICreationUnite;
 import cor.CORSpe;
 import cor.factory.ICreerCOR;
@@ -109,6 +111,6 @@ public class Grandeur implements Cloneable {
 	 */
 	@Override
 	public String toString() {
-		return value + " " + unite;
+		return NumberFormat.getInstance().format(value) + " " + unite;
 	}
 }
