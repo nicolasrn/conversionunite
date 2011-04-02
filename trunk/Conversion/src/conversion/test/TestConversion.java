@@ -27,6 +27,8 @@ public class TestConversion extends TestCase
 		
 		System.out.println(a.sub(b));
 		System.out.println(b.sub(a));
+		
+		System.out.println("-----------------------------------------------");
 	}
 	
 	public void testConversion()

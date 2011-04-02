@@ -44,25 +44,22 @@ public class RechercheMoney extends CORSpe {
 		boolean trouve = false;
 		ArrayList<Sommet> list = null;
 		
-		//IL FAUT COMMENCER LE PARCOURS AU NIVEAU DE L UNITE DE BASE JUSQU A L UNITE
-		//RECHERCHER CECI EST DONC HAUTEMENT INCORRECTE
+		int idSource = -1, idDest = -1;
+		for(int i = 0; i < graphe.size(); i++)
+			if (graphe.get(i).getUnite().equals(source.getUnite()))
+					idSource = graphe.get(i).getNum();
 		
-		//on parcours tous les sommets pour voir s'il existe une conversion possible
-		for(int i = 0; !(i >= graphe.size() || trouve == true); i++)
-		{
-			dij.getListPath(i);
-			//on récupère la liste des plus cours chemins
-			for(int j = 0; !(j >= graphe.size() || trouve == true); j++)
-			{
-				if (i != j && graphe.get(j).getUnite().equals(probleme)) // différent de la source
-				{
-					System.out.println("résultat trouvé");
-					list = dij.getShortestPath(j);
-					System.out.println(list);
-					trouve = true;
-				}
-			}
-		}
+		for(int i = 0; i < graphe.size(); i++)
+			if (graphe.get(i).getUnite().equals(probleme))
+					idDest = graphe.get(i).getNum();
+		
+		//System.out.println(idSource + " - " + idDest);
+		
+		dij.getListPath(idSource);
+		list = dij.getShortestPath(idDest);
+		if (list != null)
+			trouve = true;
+		//System.out.println(list);
 		
 		//il faut reconstituer la liste des arretes afin de récupérer les CORSpe de conversion vers la solution finale
 		ArrayList<Arrete> arretes = new ArrayList<Arrete>();
@@ -86,7 +83,7 @@ public class RechercheMoney extends CORSpe {
 			for(int i = 0; i < arretes.size(); i++)
 			{
 				g = arretes.get(i).getObjDeConversion().resoudre(arretes.get(i).getExtremite().getUnite(), g);
-				System.out.println(g);
+				//System.out.println(g);
 			}
 			
 			if (g.getUnite().equals(source.getUnite()))
