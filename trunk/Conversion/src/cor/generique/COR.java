@@ -4,12 +4,12 @@ package cor.generique;
  * 
  * met en oeuvre le DP Chain Of Responsability 
  *
- * @param <X> la solution attendu
- * @param <Y> le probleme
+ * @param <SolutionAttendu> la solution attendu
+ * @param <ProblemeAResoudre> le probleme
  */
-public abstract class COR<X, Y> 
+public abstract class COR<SolutionAttendu, ProblemeAResoudre> 
 {
-	private COR<X, Y> suivant;
+	private COR<SolutionAttendu, ProblemeAResoudre> suivant;
 	
 	/**
 	 * constructeur par défaut
@@ -23,7 +23,7 @@ public abstract class COR<X, Y>
 	 * Constructeur qui prend en parametre le suivant
 	 * @param suivant
 	 */
-	public COR(COR<X, Y> suivant)
+	public COR(COR<SolutionAttendu, ProblemeAResoudre> suivant)
 	{
 		this.suivant = suivant;
 	}
@@ -33,15 +33,21 @@ public abstract class COR<X, Y>
 	 * @param suivant
 	 * @return le suivant empilé
 	 */
-	public COR<X, Y> add(COR<X, Y> suivant)
+	public COR<SolutionAttendu, ProblemeAResoudre> add(COR<SolutionAttendu, ProblemeAResoudre> suivant)
 	{
 		this.suivant = suivant;
 		return suivant;
 	}
 	
-	public X resoudre(Y probleme, X source) 
+	/**
+	 * résolu le problème en cours
+	 * @param probleme
+	 * @param source
+	 * @return
+	 */
+	public SolutionAttendu resoudre(ProblemeAResoudre probleme, SolutionAttendu source) 
 	{
-		X solution = _resoudre(probleme, source); // resolution locale
+		SolutionAttendu solution = _resoudre(probleme, source); // resolution locale
 		
 		if (solution != null) // si on a un resultat
 			return solution; // on le retourne
@@ -49,7 +55,7 @@ public abstract class COR<X, Y>
 			return suivant.resoudre(probleme, source); // on retourne la resolution de la récursivité
 		
 		// si on est ici c'est qu'on a pas de résultat
-		return null; //on retourn null
+		return null; //on retourne null
 	}
 	
 	/**
@@ -57,5 +63,5 @@ public abstract class COR<X, Y>
 	 * @param probleme
 	 * @return
 	 */
-	protected abstract X _resoudre(Y probleme, X source);
+	protected abstract SolutionAttendu _resoudre(ProblemeAResoudre probleme, SolutionAttendu source);
 }
