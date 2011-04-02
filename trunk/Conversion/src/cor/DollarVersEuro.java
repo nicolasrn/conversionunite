@@ -22,7 +22,7 @@ public class DollarVersEuro extends CORSpe {
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(new FactoryEuro().creerUnite()) && source.getUnite().equals(new FactoryDollar().creerUnite()))
-			g = new Grandeur(Math.round(source.getValue() * 0.705119165), probleme);  
+			g = new Grandeur(source.getValue() * 0.705119165, probleme);  
 		
 		return g;
 	}
