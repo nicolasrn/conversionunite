@@ -9,12 +9,21 @@ public class Dijkstra {
 	private int sourceMem;
 	private ArrayList<Sommet> list = null;
 	
+	/**
+	 * constructeur par défaut
+	 * @param g
+	 */
 	public Dijkstra(Graphe g)
 	{
 		this.g = g;
 		sourceMem = Integer.MIN_VALUE;
 	}
 	
+	/**
+	 * retourne la liste des pères représentant les plus courts chemins
+	 * @param source
+	 * @return
+	 */
 	public ArrayList<Sommet> getListPath(int source)
 	{
 		if (list == null || sourceMem != source)
@@ -22,8 +31,16 @@ public class Dijkstra {
 		return list;
 	}
 	
+	/**
+	 * retourne le plus court chemin entre la source et la destination
+	 * @param dest
+	 * @return
+	 */
 	public ArrayList<Sommet> getShortestPath(int dest)
 	{
+		if (list == null)
+			throw new IllegalArgumentException("Merci d'executer en premier getListPath");
+		
 		ArrayList<Sommet> l = new ArrayList<Sommet>();
 		l.add(g.get(dest));
 		
@@ -34,6 +51,10 @@ public class Dijkstra {
 		return l;
 	}
 	
+	/**
+	 * execute l'algorithme de calcul
+	 * @param source
+	 */
 	private void execute(int source)
 	{
 		this.sourceMem = source;

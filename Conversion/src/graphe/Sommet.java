@@ -2,12 +2,16 @@ package graphe;
 
 import java.util.ArrayList;
 
+import conversion.Unite;
+import conversion.factory.ICreationUnite;
+
 public class Sommet implements Comparable<Sommet>{
 	private int num;
-	private String name;
 	private ArrayList<Arrete> adjacences;
-	
 	private double minDistance;
+	
+	private String name;
+	private Unite unite;
 	
 	/**
 	 * 
@@ -15,10 +19,14 @@ public class Sommet implements Comparable<Sommet>{
 	 * @param name
 	 * @param adjacences
 	 */
-	public Sommet(int num, String name, ArrayList<Arrete> adjacences, double minDistance)
+	public Sommet(int num, String name, ICreationUnite unite, ArrayList<Arrete> adjacences, double minDistance)
 	{
 		this.num = num;
 		this.name = name;
+		if (unite == null)
+			this.unite = null;
+		else
+			this.unite = unite.creerUnite();
 		this.adjacences = adjacences;
 		this.minDistance = minDistance;
 	}
@@ -28,16 +36,17 @@ public class Sommet implements Comparable<Sommet>{
 	 */
 	public Sommet()
 	{
-		this(-1, "", new ArrayList<Arrete>(), Double.POSITIVE_INFINITY);
+		this(-1, "", null, new ArrayList<Arrete>(), Double.POSITIVE_INFINITY);
 	}
 	
 	/**
-	 * constructeur qui donne un nom au Sommet crŽŽ
+	 * constructeur qui donne un nom et une unite au Sommet crŽŽ
 	 * @param name
+	 * @param unite
 	 */
-	public Sommet(String name)
+	public Sommet(String name, ICreationUnite unite)
 	{
-		this(-1, name, new ArrayList<Arrete>(), Double.POSITIVE_INFINITY);
+		this(-1, name, unite, new ArrayList<Arrete>(), Double.POSITIVE_INFINITY);
 	}
 
 	/**
@@ -123,6 +132,20 @@ public class Sommet implements Comparable<Sommet>{
 	}
 
 	/**
+	 * @return the unite
+	 */
+	public Unite getUnite() {
+		return unite;
+	}
+
+	/**
+	 * @param unite the unite to set
+	 */
+	public void setUnite(Unite unite) {
+		this.unite = unite;
+	}
+
+	/**
 	 * @return the minDistance
 	 */
 	public double getMinDistance() {
@@ -146,5 +169,13 @@ public class Sommet implements Comparable<Sommet>{
 	@Override
 	public int compareTo(Sommet o) {
 		return Double.compare(minDistance, o.minDistance);
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Sommet [num=" + num + ", name=" + name + "]";
 	}
 }
