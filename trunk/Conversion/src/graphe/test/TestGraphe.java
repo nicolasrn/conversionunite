@@ -13,11 +13,11 @@ public class TestGraphe extends TestCase {
 	public void testGraphe() {
 		Graphe graphe = new Graphe();
 		
-		Sommet 	a = new Sommet("a"),
-				b = new Sommet("b"), 
-				c = new Sommet("c"), 
-				d = new Sommet("d"), 
-				e = new Sommet("e");
+		Sommet 	a = new Sommet("a", null),
+				b = new Sommet("b", null), 
+				c = new Sommet("c", null), 
+				d = new Sommet("d", null), 
+				e = new Sommet("e", null);
 		
 		graphe.addSommet(a);
 		graphe.addSommet(b);

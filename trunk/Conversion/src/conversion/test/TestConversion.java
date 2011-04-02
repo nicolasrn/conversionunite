@@ -38,7 +38,7 @@ public class TestConversion extends TestCase
 		//conversion Dollar Yen retourne null
 		dest = a.convertir(new FactoryYen());
 		System.out.println(dest);
-		assertNull(dest);
+		assertNotNull(dest);
 		
 		//conversion dollar euro retourne ok
 		dest = a.convertir(new FactoryEuro());
