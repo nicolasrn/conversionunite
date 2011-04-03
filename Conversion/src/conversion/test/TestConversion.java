@@ -5,7 +5,9 @@ import conversion.factory.money.FactoryDollar;
 import conversion.factory.money.FactoryEuro;
 import conversion.factory.money.FactoryYen;
 import conversion.factory.vitesse.FactoryMetreSeconde;
+import conversion.factory.vitesse.FactoryPiedSeconde;
 import cor.factory.ConvertisseurMoney;
+import cor.factory.ConvertisseurVitesse;
 import junit.framework.TestCase;
 
 public class TestConversion extends TestCase 
@@ -32,10 +34,14 @@ public class TestConversion extends TestCase
 		System.out.println("-----------------------------------------------");
 	}
 	
-	public void testUniteCompose()
+	public void testUniteCompose() throws CloneNotSupportedException
 	{
-		Grandeur a = new Grandeur(15.3, new FactoryMetreSeconde());
-		System.out.println(a);
+		Grandeur b = new Grandeur(8.3, new FactoryMetreSeconde());
+		
+		b.setConvertisseur(new ConvertisseurVitesse());
+		Grandeur d = b.convertir(new FactoryPiedSeconde());
+		
+		System.out.println(b + " = " + d);
 		
 		System.out.println("-----------------------------------------------");
 	}
