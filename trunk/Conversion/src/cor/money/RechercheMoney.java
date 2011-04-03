@@ -8,9 +8,9 @@ import graphe.Graphe;
 import graphe.Sommet;
 import conversion.Grandeur;
 import conversion.Unite;
-import conversion.factory.FactoryDollar;
-import conversion.factory.FactoryEuro;
-import conversion.factory.FactoryYen;
+import conversion.factory.money.FactoryDollar;
+import conversion.factory.money.FactoryEuro;
+import conversion.factory.money.FactoryYen;
 import cor.CORSpe;
 import cor.generique.COR;
 

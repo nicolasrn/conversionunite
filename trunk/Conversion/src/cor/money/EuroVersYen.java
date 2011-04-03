@@ -2,8 +2,8 @@ package cor.money;
 
 import conversion.Grandeur;
 import conversion.Unite;
-import conversion.factory.FactoryEuro;
-import conversion.factory.FactoryYen;
+import conversion.factory.money.FactoryEuro;
+import conversion.factory.money.FactoryYen;
 import cor.CORSpe;
 import cor.generique.COR;
 

@@ -1,9 +1,10 @@
 package conversion.test;
 
 import conversion.Grandeur;
-import conversion.factory.FactoryDollar;
-import conversion.factory.FactoryEuro;
-import conversion.factory.FactoryYen;
+import conversion.factory.money.FactoryDollar;
+import conversion.factory.money.FactoryEuro;
+import conversion.factory.money.FactoryYen;
+import conversion.factory.vitesse.FactoryMetreSeconde;
 import cor.factory.ConvertisseurMoney;
 import junit.framework.TestCase;
 
@@ -27,6 +28,14 @@ public class TestConversion extends TestCase
 		
 		System.out.println(a.sub(b));
 		System.out.println(b.sub(a));
+		
+		System.out.println("-----------------------------------------------");
+	}
+	
+	public void testUniteCompose()
+	{
+		Grandeur a = new Grandeur(15.3, new FactoryMetreSeconde());
+		System.out.println(a);
 		
 		System.out.println("-----------------------------------------------");
 	}
