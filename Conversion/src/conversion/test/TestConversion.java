@@ -14,11 +14,11 @@ public class TestConversion extends TestCase
 {
 	public void testMoney() throws CloneNotSupportedException 
 	{
-		Mesure a = new Mesure(12, new FactoryEuro().creerUnite());
-		Mesure b = new Mesure(6, new FactoryEuro().creerUnite());
+		Mesure a = new Mesure(12, new FactoryEuro());
+		Mesure b = new Mesure(6, new FactoryEuro());
 		
-		Mesure c = new Mesure(12, new FactoryYen().creerUnite());
-		Mesure d = new Mesure(6, new FactoryDollar().creerUnite());
+		Mesure c = new Mesure(12, new FactoryYen());
+		Mesure d = new Mesure(6, new FactoryDollar());
 		
 		System.out.println(a);
 		System.out.println(b);
@@ -36,7 +36,7 @@ public class TestConversion extends TestCase
 	
 	public void testUniteCompose() throws CloneNotSupportedException
 	{
-		Mesure b = new Mesure(8.3, new FactoryMetreSeconde().creerUnite());
+		Mesure b = new Mesure(8.3, new FactoryMetreSeconde());
 		
 		b.setConvertisseur(new ConvertisseurVitesse());
 		Mesure d = b.convertir(new FactoryPiedSeconde());
@@ -48,7 +48,7 @@ public class TestConversion extends TestCase
 	
 	public void testConversion()
 	{
-		Mesure a = new Mesure(14.3, new FactoryDollar().creerUnite());
+		Mesure a = new Mesure(14.3, new FactoryDollar());
 		a.setConvertisseur(new ConvertisseurMoney());
 		
 		Mesure dest;

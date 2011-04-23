@@ -12,6 +12,6 @@ public class FactoryDollar implements ICreationUnite
 {
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("Dollar", Currency.getInstance(Locale.US).getSymbol(), new GrandeurAtomique());
+		return new UniteAtomique("Dollar", Currency.getInstance(Locale.US).getSymbol(), new GrandeurAtomique("Argent"));
 	}
 }

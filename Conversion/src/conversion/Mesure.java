@@ -6,10 +6,16 @@ import cor.CORSpe;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ICreerCOR;
 
-public class Mesure {
+public class Mesure implements Cloneable{
 	private double valeur;
 	private Unite unite;
 	private CORSpe convertisseur;
+	
+	public Mesure(double valeur, ICreationUnite unite)
+	{
+		this.valeur = valeur;
+		this.unite = unite.creerUnite();
+	}
 	
 	public Mesure(double valeur, Unite unite)
 	{
@@ -54,6 +60,11 @@ public class Mesure {
 	}
 
 	public Mesure convertir(ICreationUnite unite) {
-		return null;
+		return convertisseur.resoudre(unite.creerUnite(), this);
+	}
+
+	@Override
+	public String toString() {
+		return "Mesure [valeur=" + valeur + ", unite=" + unite + "]";
 	}
 }

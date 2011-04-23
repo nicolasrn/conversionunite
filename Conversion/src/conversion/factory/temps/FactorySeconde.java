@@ -9,7 +9,7 @@ public class FactorySeconde implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("seconde", "s", new GrandeurAtomique());
+		return new UniteAtomique("seconde", "s", new GrandeurAtomique("Argent"));
 	}
 
 }

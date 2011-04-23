@@ -9,7 +9,7 @@ public class FactoryMetre implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("metre", "m", new GrandeurAtomique());
+		return new UniteAtomique("metre", "m", new GrandeurAtomique("distance"));
 	}
 
 }

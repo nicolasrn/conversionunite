@@ -12,6 +12,6 @@ public class FactoryEuro implements ICreationUnite
 {
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("Euro", Currency.getInstance(Locale.FRANCE).getSymbol(), new GrandeurAtomique());
+		return new UniteAtomique("Euro", Currency.getInstance(Locale.FRANCE).getSymbol(), new GrandeurAtomique("Argent"));
 	}	
 }
