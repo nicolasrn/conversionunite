@@ -1,7 +1,7 @@
 package conversion;
 
 import conversion.factory.ICreationUnite;
-import conversion.factory.vitesse.FactoryPiedSeconde;
+import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.CORSpe;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ICreerCOR;

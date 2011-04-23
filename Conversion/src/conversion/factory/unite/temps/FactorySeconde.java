@@ -1,15 +1,15 @@
-package conversion.factory.distance;
+package conversion.factory.unite.temps;
 
 import conversion.GrandeurAtomique;
 import conversion.Unite;
 import conversion.UniteAtomique;
 import conversion.factory.ICreationUnite;
 
-public class FactoryPied implements ICreationUnite {
+public class FactorySeconde implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("pied", "p", new GrandeurAtomique("distance"));
+		return new UniteAtomique("seconde", "s", new GrandeurAtomique("Argent"));
 	}
 
 }

@@ -3,8 +3,8 @@ package cor.vitesse;
 import conversion.Grandeur;
 import conversion.Mesure;
 import conversion.Unite;
-import conversion.factory.vitesse.FactoryMetreSeconde;
-import conversion.factory.vitesse.FactoryPiedSeconde;
+import conversion.factory.unite.vitesse.FactoryMetreSeconde;
+import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.CORSpe;
 import cor.generique.COR;
 
