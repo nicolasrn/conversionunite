@@ -1,4 +1,4 @@
-package conversion.factory.money;
+package conversion.factory.unite.money;
 
 import java.util.Currency;
 import java.util.Locale;

@@ -1,11 +1,11 @@
-package conversion.factory.vitesse;
+package conversion.factory.unite.vitesse;
 
 import conversion.GrandeurCompose;
 import conversion.Unite;
 import conversion.UniteCompose;
 import conversion.factory.ICreationUnite;
-import conversion.factory.distance.FactoryPied;
-import conversion.factory.temps.FactorySeconde;
+import conversion.factory.unite.distance.FactoryPied;
+import conversion.factory.unite.temps.FactorySeconde;
 
 public class FactoryPiedSeconde implements ICreationUnite {
 

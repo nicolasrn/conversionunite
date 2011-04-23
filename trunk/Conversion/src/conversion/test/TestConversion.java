@@ -1,11 +1,11 @@
 package conversion.test;
 
 import conversion.Mesure;
-import conversion.factory.money.FactoryDollar;
-import conversion.factory.money.FactoryEuro;
-import conversion.factory.money.FactoryYen;
-import conversion.factory.vitesse.FactoryMetreSeconde;
-import conversion.factory.vitesse.FactoryPiedSeconde;
+import conversion.factory.unite.money.FactoryDollar;
+import conversion.factory.unite.money.FactoryEuro;
+import conversion.factory.unite.money.FactoryYen;
+import conversion.factory.unite.vitesse.FactoryMetreSeconde;
+import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ConvertisseurVitesse;
 import junit.framework.TestCase;
