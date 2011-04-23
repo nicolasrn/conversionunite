@@ -11,7 +11,7 @@ public class FactoryMetreSeconde implements ICreationUnite{
 
 	@Override
 	public Unite creerUnite() {
-		UniteCompose u = new UniteCompose("metre par seconde", "m/s", new GrandeurCompose());
+		UniteCompose u = new UniteCompose("metre par seconde", "m/s", new GrandeurCompose("vitesse"));
 		FactoryMetre m = new FactoryMetre();
 		FactorySeconde s = new FactorySeconde();
 		u.add(m.creerUnite());

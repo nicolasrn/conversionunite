@@ -13,6 +13,6 @@ public class FactoryYen implements ICreationUnite
 	@Override
 	public Unite creerUnite() 
 	{
-		return new UniteAtomique("Yen", Currency.getInstance(Locale.JAPAN).getSymbol(), new GrandeurAtomique());
+		return new UniteAtomique("Yen", Currency.getInstance(Locale.JAPAN).getSymbol(), new GrandeurAtomique("Argent"));
 	}
 }

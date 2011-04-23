@@ -9,7 +9,7 @@ public class FactoryPied implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
-		return new UniteAtomique("pied", "p", new GrandeurAtomique());
+		return new UniteAtomique("pied", "p", new GrandeurAtomique("distance"));
 	}
 
 }
