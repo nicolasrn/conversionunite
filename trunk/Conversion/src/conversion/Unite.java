@@ -3,16 +3,18 @@ package conversion;
 public abstract class Unite implements Cloneable {
 	private String nom;
 	private String abr;
+	private Grandeur grandeur;
 	
 	/**
 	 * 
 	 * @param nom
 	 * @param abr
 	 */
-	public Unite(String nom, String abr) {
+	public Unite(String nom, String abr, Grandeur grandeur) {
 		super();
 		this.nom = nom;
 		this.abr = abr;
+		this.grandeur = grandeur;
 	}
 
 	/**
@@ -28,22 +30,22 @@ public abstract class Unite implements Cloneable {
 	public String getAbr() {
 		return abr;
 	}
-	
-	/* (non-Javadoc)
-	 * @see java.lang.Object#hashCode()
-	 */
+
+	public Grandeur getGrandeur() {
+		return grandeur;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((abr == null) ? 0 : abr.hashCode());
+		result = prime * result
+				+ ((grandeur == null) ? 0 : grandeur.hashCode());
 		result = prime * result + ((nom == null) ? 0 : nom.hashCode());
 		return result;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -58,6 +60,11 @@ public abstract class Unite implements Cloneable {
 				return false;
 		} else if (!abr.equals(other.abr))
 			return false;
+		if (grandeur == null) {
+			if (other.grandeur != null)
+				return false;
+		} else if (!grandeur.equals(other.grandeur))
+			return false;
 		if (nom == null) {
 			if (other.nom != null)
 				return false;
@@ -66,11 +73,8 @@ public abstract class Unite implements Cloneable {
 		return true;
 	}
 
-	/* (non-Javadoc)
-	 * @see java.lang.Object#toString()
-	 */
 	@Override
 	public String toString() {
-		return getAbr();
-	}
+		return abr;
+	}	
 }

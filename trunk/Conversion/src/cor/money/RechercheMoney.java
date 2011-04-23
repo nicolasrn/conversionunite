@@ -7,6 +7,7 @@ import graphe.Dijkstra;
 import graphe.Graphe;
 import graphe.Sommet;
 import conversion.Grandeur;
+import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.money.FactoryDollar;
 import conversion.factory.money.FactoryEuro;
@@ -20,13 +21,13 @@ public class RechercheMoney extends CORSpe {
 		super();
 	}
 
-	public RechercheMoney(COR<Grandeur, Unite> suivant) {
+	public RechercheMoney(COR<Mesure, Unite> suivant) {
 		super(suivant);
 	}
 
 	@Override
-	protected Grandeur _resoudre(Unite probleme, Grandeur source) {
-		Grandeur g = null;
+	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		Mesure g = null;
 
 		Graphe graphe = new Graphe();
 		Sommet 	dollar = new Sommet("Dollar", new FactoryDollar()),

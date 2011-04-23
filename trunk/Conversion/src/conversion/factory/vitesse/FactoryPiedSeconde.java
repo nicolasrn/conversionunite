@@ -1,5 +1,6 @@
 package conversion.factory.vitesse;
 
+import conversion.GrandeurCompose;
 import conversion.Unite;
 import conversion.UniteCompose;
 import conversion.factory.ICreationUnite;
@@ -10,7 +11,7 @@ public class FactoryPiedSeconde implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
-		UniteCompose u = new UniteCompose("pieds par seconde", "p/s");
+		UniteCompose u = new UniteCompose("pieds par seconde", "p/s", new GrandeurCompose());
 		FactoryPied m = new FactoryPied();
 		FactorySeconde s = new FactorySeconde();
 		u.add(m.creerUnite());

@@ -2,8 +2,8 @@ package conversion;
 
 public class UniteAtomique extends Unite 
 {
-	public UniteAtomique(String nom, String abr) 
+	public UniteAtomique(String nom, String abr, Grandeur grandeur) 
 	{
-		super(nom, abr);
+		super(nom, abr, grandeur);
 	}
 }

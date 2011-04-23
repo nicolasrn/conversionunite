@@ -1,6 +1,6 @@
 package conversion.test;
 
-import conversion.Grandeur;
+import conversion.Mesure;
 import conversion.factory.money.FactoryDollar;
 import conversion.factory.money.FactoryEuro;
 import conversion.factory.money.FactoryYen;
@@ -14,11 +14,11 @@ public class TestConversion extends TestCase
 {
 	public void testMoney() throws CloneNotSupportedException 
 	{
-		Grandeur a = new Grandeur(12, new FactoryEuro().creerUnite());
-		Grandeur b = new Grandeur(6, new FactoryEuro().creerUnite());
+		Mesure a = new Mesure(12, new FactoryEuro().creerUnite());
+		Mesure b = new Mesure(6, new FactoryEuro().creerUnite());
 		
-		Grandeur c = new Grandeur(12, new FactoryYen().creerUnite());
-		Grandeur d = new Grandeur(6, new FactoryDollar().creerUnite());
+		Mesure c = new Mesure(12, new FactoryYen().creerUnite());
+		Mesure d = new Mesure(6, new FactoryDollar().creerUnite());
 		
 		System.out.println(a);
 		System.out.println(b);
@@ -36,10 +36,10 @@ public class TestConversion extends TestCase
 	
 	public void testUniteCompose() throws CloneNotSupportedException
 	{
-		Grandeur b = new Grandeur(8.3, new FactoryMetreSeconde());
+		Mesure b = new Mesure(8.3, new FactoryMetreSeconde().creerUnite());
 		
 		b.setConvertisseur(new ConvertisseurVitesse());
-		Grandeur d = b.convertir(new FactoryPiedSeconde());
+		Mesure d = b.convertir(new FactoryPiedSeconde());
 		
 		System.out.println(b + " = " + d);
 		
@@ -48,10 +48,10 @@ public class TestConversion extends TestCase
 	
 	public void testConversion()
 	{
-		Grandeur a = new Grandeur(14.3, new FactoryDollar());
+		Mesure a = new Mesure(14.3, new FactoryDollar().creerUnite());
 		a.setConvertisseur(new ConvertisseurMoney());
 		
-		Grandeur dest;
+		Mesure dest;
 		//conversion Dollar Yen retourne null
 		dest = a.convertir(new FactoryYen());
 		System.out.println(dest);

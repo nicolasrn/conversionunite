@@ -1,6 +1,6 @@
 package cor.distance;
 
-import conversion.Grandeur;
+import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.distance.FactoryMetre;
 import conversion.factory.distance.FactoryPied;
@@ -13,17 +13,17 @@ public class MetreVersPied extends CORSpe {
 		super();
 	}
 
-	public MetreVersPied(COR<Grandeur, Unite> suivant) {
+	public MetreVersPied(COR<Mesure, Unite> suivant) {
 		super(suivant);
 	}
 
 	@Override
-	protected Grandeur _resoudre(Unite probleme, Grandeur source) {
-		Grandeur g = null;
+	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		Mesure g = null;
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(new FactoryPied().creerUnite()) && source.getUnite().equals(new FactoryMetre().creerUnite()))
-			g = new Grandeur(source.getValue() * 3.2808399, probleme);  
+			g = new Mesure(source.getValeur() * 3.2808399, probleme);  
 		
 		return g;
 	}
