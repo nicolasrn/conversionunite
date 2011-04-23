@@ -1,6 +1,6 @@
 package cor.money;
 
-import conversion.Grandeur;
+import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.money.FactoryDollar;
 import conversion.factory.money.FactoryEuro;
@@ -13,17 +13,17 @@ public class DollarVersEuro extends CORSpe {
 		super();
 	}
 
-	public DollarVersEuro(COR<Grandeur, Unite> suivant) {
+	public DollarVersEuro(COR<Mesure, Unite> suivant) {
 		super(suivant);
 	}
 
 	@Override
-	protected Grandeur _resoudre(Unite probleme, Grandeur source) {
-		Grandeur g = null;
+	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		Mesure g = null;
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(new FactoryEuro().creerUnite()) && source.getUnite().equals(new FactoryDollar().creerUnite()))
-			g = new Grandeur(source.getValue() * 0.705119165, probleme);  
+			g = new Mesure(source.getValeur() * 0.705119165, probleme);  
 		
 		return g;
 	}

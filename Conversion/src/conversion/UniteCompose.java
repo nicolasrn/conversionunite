@@ -6,9 +6,9 @@ public class UniteCompose extends Unite
 {
 	private LinkedList<Unite> unites;
 	
-	public UniteCompose(String nom, String abr) 
+	public UniteCompose(String nom, String abr, Grandeur grandeur) 
 	{
-		super(nom, abr);
+		super(nom, abr, grandeur);
 		unites = new LinkedList<Unite>();
 	}
 

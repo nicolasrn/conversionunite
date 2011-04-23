@@ -1,6 +1,7 @@
 package cor.money;
 
 import conversion.Grandeur;
+import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.money.FactoryEuro;
 import conversion.factory.money.FactoryYen;
@@ -13,17 +14,17 @@ public class EuroVersYen extends CORSpe {
 		super();
 	}
 
-	public EuroVersYen(COR<Grandeur, Unite> suivant) {
+	public EuroVersYen(COR<Mesure, Unite> suivant) {
 		super(suivant);
 	}
 
 	@Override
-	protected Grandeur _resoudre(Unite probleme, Grandeur source) {
-		Grandeur g = null;
+	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		Mesure g = null;
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(new FactoryYen().creerUnite()) && source.getUnite().equals(new FactoryEuro().creerUnite()))
-			g = new Grandeur(source.getValue() * 0.705119165, probleme);  
+			g = new Mesure(source.getValeur() * 0.705119165, probleme);  
 		
 		return g;
 	}
