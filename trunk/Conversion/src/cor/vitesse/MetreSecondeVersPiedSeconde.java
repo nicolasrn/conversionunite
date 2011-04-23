@@ -1,6 +1,5 @@
 package cor.vitesse;
 
-import conversion.Grandeur;
 import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;

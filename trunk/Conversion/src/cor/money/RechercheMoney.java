@@ -6,7 +6,6 @@ import graphe.Arrete;
 import graphe.Dijkstra;
 import graphe.Graphe;
 import graphe.Sommet;
-import conversion.Grandeur;
 import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.unite.money.FactoryDollar;

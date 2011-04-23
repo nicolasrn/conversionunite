@@ -1,6 +1,5 @@
 package cor.money;
 
-import conversion.Grandeur;
 import conversion.Mesure;
 import conversion.Unite;
 import conversion.factory.unite.money.FactoryEuro;
