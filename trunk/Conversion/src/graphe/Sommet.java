@@ -2,7 +2,9 @@ package graphe;
 
 import java.util.ArrayList;
 
-import conversion.Unite;
+import base.unite.Unite;
+
+
 import conversion.factory.ICreationUnite;
 
 public class Sommet implements Comparable<Sommet>{

@@ -1,9 +1,9 @@
 package conversion.factory.unite.distance;
 
-import conversion.Unite;
-import conversion.UniteAtomique;
+import base.grandeur.factory.atomique.FactoryDistance;
+import base.unite.Unite;
+import base.unite.UniteAtomique;
 import conversion.factory.ICreationUnite;
-import conversion.factory.grandeur.atomique.FactoryDistance;
 
 public class FactoryPied implements ICreationUnite {
 

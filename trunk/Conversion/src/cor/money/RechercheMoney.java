@@ -2,12 +2,15 @@ package cor.money;
 
 import java.util.ArrayList;
 
+import base.mesure.Mesure;
+import base.unite.Unite;
+
+
+
 import graphe.Arrete;
 import graphe.Dijkstra;
 import graphe.Graphe;
 import graphe.Sommet;
-import conversion.Mesure;
-import conversion.Unite;
 import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;

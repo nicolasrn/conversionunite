@@ -1,8 +1,8 @@
 package conversion.factory.unite.temps;
 
-import conversion.GrandeurAtomique;
-import conversion.Unite;
-import conversion.UniteAtomique;
+import base.grandeur.GrandeurAtomique;
+import base.unite.Unite;
+import base.unite.UniteAtomique;
 import conversion.factory.ICreationUnite;
 
 public class FactorySeconde implements ICreationUnite {

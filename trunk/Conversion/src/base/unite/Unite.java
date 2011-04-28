@@ -1,4 +1,6 @@
-package conversion;
+package base.unite;
+
+import base.grandeur.Grandeur;
 
 public abstract class Unite implements Cloneable {
 	private String nom;

@@ -1,8 +1,8 @@
-package conversion.factory.grandeur.atomique;
+package base.grandeur.factory.atomique;
 
-import conversion.Grandeur;
-import conversion.GrandeurAtomique;
-import conversion.factory.ICreerGrandeur;
+import base.grandeur.Grandeur;
+import base.grandeur.GrandeurAtomique;
+import base.grandeur.factory.ICreerGrandeur;
 
 public class FactoryDistance implements ICreerGrandeur{
 

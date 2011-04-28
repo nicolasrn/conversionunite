@@ -1,4 +1,6 @@
-package conversion;
+package base.unite;
+
+import base.grandeur.Grandeur;
 
 public class UniteAtomique extends Unite 
 {
