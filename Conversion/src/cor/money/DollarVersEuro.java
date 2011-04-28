@@ -1,7 +1,7 @@
 package cor.money;
 
-import conversion.Mesure;
-import conversion.Unite;
+import base.mesure.Mesure;
+import base.unite.Unite;
 import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import cor.CORSpe;

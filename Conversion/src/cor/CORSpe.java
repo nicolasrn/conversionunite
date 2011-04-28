@@ -1,7 +1,7 @@
 package cor;
 
-import conversion.Mesure;
-import conversion.Unite;
+import base.mesure.Mesure;
+import base.unite.Unite;
 import cor.generique.COR;
 
 /**

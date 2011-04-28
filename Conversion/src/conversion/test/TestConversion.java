@@ -1,6 +1,6 @@
 package conversion.test;
 
-import conversion.Mesure;
+import base.mesure.Mesure;
 import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;

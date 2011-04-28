@@ -1,7 +1,7 @@
 package cor.distance;
 
-import conversion.Mesure;
-import conversion.Unite;
+import base.mesure.Mesure;
+import base.unite.Unite;
 import conversion.factory.unite.distance.FactoryMetre;
 import conversion.factory.unite.distance.FactoryPied;
 import cor.CORSpe;

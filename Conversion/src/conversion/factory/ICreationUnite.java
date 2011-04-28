@@ -1,6 +1,6 @@
 package conversion.factory;
 
-import conversion.Unite;
+import base.unite.Unite;
 
 public interface ICreationUnite {
 	public Unite creerUnite();

@@ -1,6 +1,10 @@
-package conversion;
+package base.unite;
+
 
 import java.util.LinkedList;
+
+import base.grandeur.Grandeur;
+
 
 public class UniteCompose extends Unite 
 {

@@ -1,6 +1,6 @@
-package conversion.factory;
+package base.grandeur.factory;
 
-import conversion.Grandeur;
+import base.grandeur.Grandeur;
 
 public interface ICreerGrandeur {
 	public Grandeur creerGrandeur();

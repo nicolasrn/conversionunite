@@ -1,7 +1,7 @@
 package cor.vitesse;
 
-import conversion.Mesure;
-import conversion.Unite;
+import base.mesure.Mesure;
+import base.unite.Unite;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.CORSpe;

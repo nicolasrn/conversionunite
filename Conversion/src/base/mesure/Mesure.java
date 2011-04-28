@@ -1,5 +1,6 @@
-package conversion;
+package base.mesure;
 
+import base.unite.Unite;
 import conversion.factory.ICreationUnite;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.CORSpe;
