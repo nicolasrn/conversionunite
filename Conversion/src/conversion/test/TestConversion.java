@@ -5,6 +5,7 @@ import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;
+import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ConvertisseurVitesse;
@@ -40,8 +41,10 @@ public class TestConversion extends TestCase
 		
 		b.setConvertisseur(new ConvertisseurVitesse());
 		Mesure d = b.convertir(new FactoryPiedSeconde());
+		Mesure e = b.convertir(new FactoryPiedMinute());
 		
 		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
 		
 		System.out.println("-----------------------------------------------");
 	}

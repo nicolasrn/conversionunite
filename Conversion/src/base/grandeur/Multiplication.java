@@ -4,24 +4,24 @@ import java.util.HashMap;
 
 import base.grandeur.factory.ICreerGrandeur;
 
-public class Division extends Operateur {
+public class Multiplication extends Operateur {
 
-	public Division(ElementFonction a, ElementFonction b) {
+	public Multiplication(ElementFonction a, ElementFonction b) {
 		super(a, b);
 	}
 
-	public Division(ICreerGrandeur a, ICreerGrandeur b) {
+	public Multiplication(ICreerGrandeur a, ICreerGrandeur b) {
 		super(a, b);
 	}
 
 	@Override
 	public double evaluer(HashMap<String, Double> val) {
-		return a.evaluer(val) / b.evaluer(val);
+		return a.evaluer(val) * b.evaluer(val);
 	}
 
 	@Override
 	public String symboleOperateur() {
-		return "/";
+		return "*";
 	}
 
 }

@@ -1,14 +1,14 @@
 package base.grandeur;
 
-public class GrandeurAtomique extends Grandeur {
+import java.util.HashMap;
 
-	public GrandeurAtomique(String nom) {
-		super(nom);
+public class GrandeurAtomique extends Grandeur {
+	public GrandeurAtomique(String nom, String abr) {
+		super(nom, abr);
 	}
 
 	@Override
-	public Object evaluer() {
-		return nom;
+	public double evaluer(HashMap<String, Double> val) {
+		return val.get(this.abr);
 	}
-
 }
