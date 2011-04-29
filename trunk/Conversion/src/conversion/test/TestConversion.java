@@ -1,12 +1,16 @@
 package conversion.test;
 
 import base.mesure.Mesure;
+import conversion.factory.unite.acceleration.FactoryMetreSecondeCarre;
+import conversion.factory.unite.acceleration.FactoryPiedMinuteCarre;
+import conversion.factory.unite.acceleration.FactoryPiedSecondeCarre;
 import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
+import cor.factory.ConvertisseurAcceleration;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ConvertisseurVitesse;
 import junit.framework.TestCase;
@@ -42,6 +46,20 @@ public class TestConversion extends TestCase
 		b.setConvertisseur(new ConvertisseurVitesse());
 		Mesure d = b.convertir(new FactoryPiedSeconde());
 		Mesure e = b.convertir(new FactoryPiedMinute());
+		
+		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
+		
+		System.out.println("-----------------------------------------------");
+	}
+	
+	public void testAcceleration() throws CloneNotSupportedException
+	{
+		Mesure b = new Mesure(12.21, new FactoryMetreSecondeCarre());
+		
+		b.setConvertisseur(new ConvertisseurAcceleration());
+		Mesure d = b.convertir(new FactoryPiedSecondeCarre());
+		Mesure e = b.convertir(new FactoryPiedMinuteCarre());
 		
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);

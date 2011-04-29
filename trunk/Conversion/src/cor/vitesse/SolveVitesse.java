@@ -12,13 +12,13 @@ import cor.factory.ConvertiseurDistance;
 import cor.factory.ConvertisseurTemps;
 import cor.generique.COR;
 
-public class MetreSecondeVersPiedSeconde extends CORSpe {
+public class SolveVitesse extends CORSpe {
 
-	public MetreSecondeVersPiedSeconde() {
+	public SolveVitesse() {
 		super();
 	}
 
-	public MetreSecondeVersPiedSeconde(COR<Mesure, Unite> suivant) {
+	public SolveVitesse(COR<Mesure, Unite> suivant) {
 		super(suivant);
 	}
 

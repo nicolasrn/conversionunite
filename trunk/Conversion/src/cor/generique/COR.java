@@ -7,7 +7,7 @@ package cor.generique;
  * @param <SolutionAttendu> la solution attendu
  * @param <ProblemeAResoudre> le probleme
  */
-public abstract class COR<SolutionAttendu, ProblemeAResoudre> 
+public abstract class COR<SolutionAttendu, ProblemeAResoudre>
 {
 	private COR<SolutionAttendu, ProblemeAResoudre> suivant;
 	
