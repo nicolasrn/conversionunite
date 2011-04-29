@@ -8,7 +8,7 @@ public class FactoryTemps implements ICreerGrandeur{
 
 	@Override
 	public Grandeur creerGrandeur() {
-		return new GrandeurAtomique("temps");
+		return new GrandeurAtomique("temps", Grandeur.Temps);
 	}
 
 }

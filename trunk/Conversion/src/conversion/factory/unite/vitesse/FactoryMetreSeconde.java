@@ -1,6 +1,6 @@
 package conversion.factory.unite.vitesse;
 
-import base.grandeur.GrandeurCompose;
+import base.grandeur.factory.composite.FactoryVitesse;
 import base.unite.Unite;
 import base.unite.UniteCompose;
 import conversion.factory.ICreationUnite;
@@ -11,7 +11,7 @@ public class FactoryMetreSeconde implements ICreationUnite{
 
 	@Override
 	public Unite creerUnite() {
-		UniteCompose u = new UniteCompose("metre par seconde", "m/s", new GrandeurCompose("vitesse",null));
+		UniteCompose u = new UniteCompose("metre par seconde", "m/s", new FactoryVitesse().creerGrandeur());
 		FactoryMetre m = new FactoryMetre();
 		FactorySeconde s = new FactorySeconde();
 		u.add(m.creerUnite());

@@ -8,7 +8,7 @@ public class FactoryMonnaie implements ICreerGrandeur {
 
 	@Override
 	public Grandeur creerGrandeur() {
-		return new GrandeurAtomique("monnaie");
+		return new GrandeurAtomique("monnaie", Grandeur.Argent);
 	}
 
 }

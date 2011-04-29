@@ -8,7 +8,7 @@ public class FactoryDistance implements ICreerGrandeur{
 
 	@Override
 	public Grandeur creerGrandeur() {
-		return new GrandeurAtomique("distance");
+		return new GrandeurAtomique("distance", Grandeur.Distance);
 	}
 
 }

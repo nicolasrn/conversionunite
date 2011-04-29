@@ -1,5 +1,6 @@
 package test;
 
+import base.test.TestGrandeur;
 import conversion.test.TestConversion;
 import graphe.test.TestGraphe;
 import cor.test.TestCOR;
@@ -14,6 +15,7 @@ public class AllTests {
 		suite.addTestSuite(TestCOR.class);
 		suite.addTestSuite(TestGraphe.class);
 		suite.addTestSuite(TestConversion.class);
+		suite.addTestSuite(TestGrandeur.class);
 		//$JUnit-END$
 		return suite;
 	}

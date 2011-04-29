@@ -5,7 +5,11 @@ import java.util.LinkedList;
 
 import base.grandeur.Grandeur;
 
-
+/**
+ * pour représenter le m/s <=> D/T
+ * @author nicolasreitz
+ *
+ */
 public class UniteCompose extends Unite 
 {
 	private LinkedList<Unite> unites;
@@ -15,14 +19,14 @@ public class UniteCompose extends Unite
 		super(nom, abr, grandeur);
 		unites = new LinkedList<Unite>();
 	}
-
+	
 	/**
 	 * @return the unites
 	 */
 	public LinkedList<Unite> getUnites() {
 		return unites;
 	}
-
+	
 	/**
 	 * @param e
 	 * @return
@@ -31,7 +35,7 @@ public class UniteCompose extends Unite
 	public boolean add(Unite e) {
 		return unites.add(e);
 	}
-
+	
 	/**
 	 * @param e
 	 * @see java.util.LinkedList#addFirst(java.lang.Object)
@@ -39,7 +43,7 @@ public class UniteCompose extends Unite
 	public void addFirst(Unite e) {
 		unites.addFirst(e);
 	}
-
+	
 	/**
 	 * @param e
 	 * @see java.util.LinkedList#addLast(java.lang.Object)
@@ -47,7 +51,7 @@ public class UniteCompose extends Unite
 	public void addLast(Unite e) {
 		unites.addLast(e);
 	}
-
+	
 	/**
 	 * @return
 	 * @see java.util.LinkedList#getFirst()
@@ -55,7 +59,7 @@ public class UniteCompose extends Unite
 	public Unite getFirst() {
 		return unites.getFirst();
 	}
-
+	
 	/**
 	 * @return
 	 * @see java.util.LinkedList#getLast()
@@ -63,7 +67,7 @@ public class UniteCompose extends Unite
 	public Unite getLast() {
 		return unites.getLast();
 	}
-
+	
 	/**
 	 * @param o
 	 * @return
@@ -72,7 +76,7 @@ public class UniteCompose extends Unite
 	public boolean remove(Object o) {
 		return unites.remove(o);
 	}
-
+	
 	/**
 	 * @return
 	 * @see java.util.LinkedList#removeFirst()
@@ -80,7 +84,7 @@ public class UniteCompose extends Unite
 	public Unite removeFirst() {
 		return unites.removeFirst();
 	}
-
+	
 	/**
 	 * @return
 	 * @see java.util.LinkedList#removeLast()
@@ -88,12 +92,43 @@ public class UniteCompose extends Unite
 	public Unite removeLast() {
 		return unites.removeLast();
 	}
-
+	
 	/**
 	 * @return
 	 * @see java.util.LinkedList#size()
 	 */
 	public int size() {
 		return unites.size();
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#hashCode()
+	 */
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((unites == null) ? 0 : unites.hashCode());
+		return result;
+	}
+	
+	/* (non-Javadoc)
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		UniteCompose other = (UniteCompose) obj;
+		if (unites == null) {
+			if (other.unites != null)
+				return false;
+		} else if (!unites.equals(other.unites))
+			return false;
+		return true;
 	}
 }

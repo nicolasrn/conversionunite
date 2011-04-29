@@ -2,9 +2,7 @@ package base.mesure;
 
 import base.unite.Unite;
 import conversion.factory.ICreationUnite;
-import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.CORSpe;
-import cor.factory.ConvertisseurMoney;
 import cor.factory.ICreerCOR;
 
 public class Mesure implements Cloneable{
@@ -61,9 +59,13 @@ public class Mesure implements Cloneable{
 	}
 
 	public Mesure convertir(ICreationUnite unite) {
-		return convertisseur.resoudre(unite.creerUnite(), this);
+		return convertir(unite.creerUnite());//convertisseur.resoudre(unite.creerUnite(), this);
 	}
 
+	public Mesure convertir(Unite unite) {
+		return convertisseur.resoudre(unite, this);
+	}
+	
 	@Override
 	public String toString() {
 		return "Mesure [valeur=" + valeur + ", unite=" + unite + "]";
