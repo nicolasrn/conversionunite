@@ -53,6 +53,15 @@ public class UniteCompose extends Unite
 	}
 	
 	/**
+	 * @param arg0
+	 * @return
+	 * @see java.util.LinkedList#get(int)
+	 */
+	public Unite get(int arg0) {
+		return unites.get(arg0);
+	}
+
+	/**
 	 * @return
 	 * @see java.util.LinkedList#getFirst()
 	 */
