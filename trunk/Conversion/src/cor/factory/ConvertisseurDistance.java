@@ -9,7 +9,9 @@ public class ConvertisseurDistance implements ICreerCOR {
 	@Override
 	public CORSpe creerConvertisseur() {
 		CORSpe cor = new MetreVersPied();
+		cor = new MetreVersPied().getInverseInstance(cor);
 		cor = new MetreVersCentimetre(cor);
+		cor = new MetreVersCentimetre().getInverseInstance(cor);
 		return cor;
 	}
 
