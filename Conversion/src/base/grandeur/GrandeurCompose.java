@@ -14,6 +14,11 @@ public class GrandeurCompose extends Grandeur {
 	public double evaluer(HashMap<String, Double> val) {
 		return tete.evaluer(val);
 	}
+
+	@Override
+	public String ecrireEvaluation(HashMap<String, Double> val) {
+		return "" + tete.ecrireEvaluation(val);
+	}
 	
 	@Override
 	public String toString()

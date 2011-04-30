@@ -11,6 +11,7 @@ import junit.framework.TestCase;
 
 public class TestGraphe extends TestCase {
 	public void testGraphe() {
+		System.out.println("--------------test graphe--------------------------");
 		Graphe graphe = new Graphe();
 		
 		Sommet 	a = new Sommet("a", null),

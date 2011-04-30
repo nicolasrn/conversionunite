@@ -1,6 +1,7 @@
 package base.unite;
 
 import base.grandeur.Grandeur;
+import base.grandeur.factory.ICreerGrandeur;
 
 public abstract class Unite implements Cloneable {
 	private String nom;
@@ -11,12 +12,23 @@ public abstract class Unite implements Cloneable {
 	 * 
 	 * @param nom
 	 * @param abr
+	 * @param grandeur
 	 */
 	public Unite(String nom, String abr, Grandeur grandeur) {
 		super();
 		this.nom = nom;
 		this.abr = abr;
 		this.grandeur = grandeur;
+	}
+	
+	/**
+	 * 
+	 * @param nom
+	 * @param abr
+	 * @param grandeur
+	 */
+	public Unite(String nom, String abr, ICreerGrandeur grandeur) {
+		this(nom, abr, grandeur.creerGrandeur());
 	}
 
 	/**

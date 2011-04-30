@@ -1,24 +1,56 @@
 package base.grandeur;
 
+import java.util.HashMap;
+
 import base.grandeur.factory.ICreerGrandeur;
 
 public abstract class Operateur extends ElementFonction {
 
 	protected ElementFonction a, b;
 	
-	public Operateur(ElementFonction a, ElementFonction b) {
+	public Operateur(ElementFonction a, ElementFonction b, String abr) {
 		this.a = a;
 		this.b = b;
+		this.abr = abr;
 	}
 	
-	public Operateur(ICreerGrandeur a, ICreerGrandeur b) {
-		this(a.creerGrandeur(), b.creerGrandeur());
+	public Operateur(ICreerGrandeur a, ICreerGrandeur b, String abr) {
+		this(a.creerGrandeur(), b.creerGrandeur(), abr);
+	}
+	
+	@Override
+	public String ecrireEvaluation(HashMap<String, Double> val)
+	{
+		//b.ecrireEvaluation(val)
+		String 	stra = "" + (val.get(a.abr) != null ? val.get(a.abr) : a.ecrireEvaluation(val)),
+				strb = "" + (val.get(b.abr) != null ? val.get(b.abr) : b.ecrireEvaluation(val));
+		
+		return stra + abr + strb;
 	}
 	
 	@Override
 	public String toString()
 	{
-		return a + symboleOperateur() + b;
+		return a + abr + b;
+	}
+	
+	@Override
+	public double evaluer(HashMap<String, Double> val)
+	{
+		double va, vb;
+		
+		//si une valeur est déjà spécifier dans les variables on ne vas pas plus loin
+		if (val.get(a.getAbr()) != null) 
+			va = val.get(a.getAbr());
+		else
+			va = a.evaluer(val);
+		
+		if (val.get(b.getAbr()) != null)
+			vb = val.get(b.getAbr());
+		else
+			vb = b.evaluer(val);
+		
+		return calculer(va, vb);
 	}
 	
 	/* (non-Javadoc)
@@ -57,6 +89,6 @@ public abstract class Operateur extends ElementFonction {
 			return false;
 		return true;
 	}
-
-	public abstract String symboleOperateur();
+	
+	public abstract double calculer(double va, double vb);
 }

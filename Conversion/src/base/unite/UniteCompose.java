@@ -4,6 +4,7 @@ package base.unite;
 import java.util.LinkedList;
 
 import base.grandeur.Grandeur;
+import base.grandeur.factory.ICreerGrandeur;
 
 /**
  * pour représenter le m/s <=> D/T
@@ -20,6 +21,10 @@ public class UniteCompose extends Unite
 		unites = new LinkedList<Unite>();
 	}
 	
+	public UniteCompose(String nom, String abr, ICreerGrandeur grandeur) {
+		this(nom, abr, grandeur.creerGrandeur());
+	}
+
 	/**
 	 * @return the unites
 	 */

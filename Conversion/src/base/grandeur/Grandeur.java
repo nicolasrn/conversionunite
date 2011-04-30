@@ -8,8 +8,11 @@ public abstract class Grandeur extends ElementFonction implements Cloneable {
 	public static final String Acceleration = "Ac";
 	public static final String Vitesse = "V";
 	
+	public static final String Force = "F";
+	public static final String Pression = "P";
+	public static final String Masse = "M";
+	
 	protected String nom;
-	protected String abr;
 	
 	public Grandeur(String nom, String abr)
 	{

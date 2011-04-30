@@ -10,13 +10,11 @@ public class TestCOR extends TestCase
 {
 	public void testCORConstruction1()
 	{
+		System.out.println("--------------test COR construction--------------------------");
 		CORSpe cor = new DollarVersEuro();
 		cor = new EuroVersYen(cor);
-	}
-	
-	public void testCORConstruction2()
-	{
-		CORSpe cor = new DollarVersEuro();
+		
+		cor = new DollarVersEuro();
 		cor.add(new EuroVersYen());	
 	}
 }
