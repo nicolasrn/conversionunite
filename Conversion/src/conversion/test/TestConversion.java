@@ -4,6 +4,9 @@ import base.mesure.Mesure;
 import conversion.factory.unite.acceleration.FactoryMetreSecondeCarre;
 import conversion.factory.unite.acceleration.FactoryPiedMinuteCarre;
 import conversion.factory.unite.acceleration.FactoryPiedSecondeCarre;
+import conversion.factory.unite.distance.FactoryCentiMetre;
+import conversion.factory.unite.distance.FactoryMetre;
+import conversion.factory.unite.distance.FactoryPied;
 import conversion.factory.unite.masse.FactoryGramme;
 import conversion.factory.unite.masse.FactoryKiloGramme;
 import conversion.factory.unite.money.FactoryDollar;
@@ -18,6 +21,7 @@ import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import cor.factory.ConvertisseurAcceleration;
+import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurMasse;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ConvertisseurPression;
@@ -61,6 +65,29 @@ public class TestConversion extends TestCase
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
 		
+	}
+	
+	public void testDistance() throws CloneNotSupportedException
+	{
+		System.out.println("--------------Test distance-----------------");
+		Mesure b = new Mesure(12.21, new FactoryMetre());
+		
+		b.setConvertisseur(new ConvertisseurDistance());
+		Mesure d = b.convertir(new FactoryPied());
+		Mesure e = b.convertir(new FactoryCentiMetre());
+		
+		Mesure oe, od;
+		e.setConvertisseur(new ConvertisseurDistance());
+		d.setConvertisseur(new ConvertisseurDistance());
+		
+		oe = e.convertir(new FactoryMetre());
+		od = e.convertir(new FactoryMetre());
+		
+		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
+		
+		System.out.println(e + " = " + od);
+		System.out.println(d + " = " + oe);
 	}
 	
 	public void testAcceleration() throws CloneNotSupportedException
