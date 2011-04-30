@@ -17,6 +17,8 @@ import conversion.factory.unite.pression.FactoryBar;
 import conversion.factory.unite.pression.FactoryPascal;
 import conversion.factory.unite.surface.FactoryCentiMetreCarre;
 import conversion.factory.unite.surface.FactoryMetreCarre;
+import conversion.factory.unite.temperature.FactoryCelsius;
+import conversion.factory.unite.temperature.FactoryFahrenheit;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
@@ -25,13 +27,14 @@ import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurMasse;
 import cor.factory.ConvertisseurMoney;
 import cor.factory.ConvertisseurPression;
+import cor.factory.ConvertisseurTemperature;
 import cor.factory.ConvertisseurVitesse;
 import cor.factory.ConvertisseurSurface;
 import junit.framework.TestCase;
 
 public class TestConversion extends TestCase 
 {
-	public void testMoney() throws CloneNotSupportedException 
+	/*public void testMoney() throws CloneNotSupportedException 
 	{
 		System.out.println("--------------Test monney-----------------");
 		Mesure a = new Mesure(12, new FactoryEuro());
@@ -53,20 +56,6 @@ public class TestConversion extends TestCase
 		
 	}
 	
-	public void testUniteCompose() throws CloneNotSupportedException
-	{
-		System.out.println("--------------Test UniteComposé-----------------");
-		Mesure b = new Mesure(8.3, new FactoryMetreSeconde());
-		
-		b.setConvertisseur(new ConvertisseurVitesse());
-		Mesure d = b.convertir(new FactoryPiedSeconde());
-		Mesure e = b.convertir(new FactoryPiedMinute());
-		
-		System.out.println(b + " = " + d);
-		System.out.println(b + " = " + e);
-		
-	}
-	
 	public void testDistance() throws CloneNotSupportedException
 	{
 		System.out.println("--------------Test distance-----------------");
@@ -81,13 +70,27 @@ public class TestConversion extends TestCase
 		d.setConvertisseur(new ConvertisseurDistance());
 		
 		oe = e.convertir(new FactoryMetre());
-		od = e.convertir(new FactoryMetre());
+		od = d.convertir(new FactoryMetre());
 		
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
 		
-		System.out.println(e + " = " + od);
-		System.out.println(d + " = " + oe);
+		System.out.println(e + " = " + oe);
+		System.out.println(d + " = " + od);
+	}
+	
+	public void testVitesse() throws CloneNotSupportedException
+	{
+		System.out.println("--------------Test vitesse-----------------");
+		Mesure b = new Mesure(8.3, new FactoryMetreSeconde());
+		
+		b.setConvertisseur(new ConvertisseurVitesse());
+		Mesure d = b.convertir(new FactoryPiedSeconde());
+		Mesure e = b.convertir(new FactoryPiedMinute());
+		
+		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
+		
 	}
 	
 	public void testAcceleration() throws CloneNotSupportedException
@@ -129,16 +132,29 @@ public class TestConversion extends TestCase
 	public void testPression() throws CloneNotSupportedException
 	{
 		System.out.println("--------------Test pression-----------------");
-		Mesure b = new Mesure(1, new FactoryPascal());
+		Mesure b = new Mesure(5, new FactoryPascal());
 		b.setConvertisseur(new ConvertisseurPression());
 		
 		Mesure d = b.convertir(new FactoryBar());
 		Mesure e = b.convertir(new FactoryAtmosphere());
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
+	}*/
+	
+	public void testTemperature() throws CloneNotSupportedException
+	{
+		System.out.println("--------------Test temperature-----------------");
+		Mesure b = new Mesure(5, new FactoryCelsius());
+		b.setConvertisseur(new ConvertisseurTemperature());
+		
+		Mesure d = b.convertir(new FactoryFahrenheit());
+		System.out.println(b + " = " + d);
+		d.setConvertisseur(new ConvertisseurTemperature());
+		Mesure e = d.convertir(new FactoryCelsius());
+		System.out.println(d + " = " + e);
 	}
 	
-	public void testConversion()
+	/*public void testConversion()
 	{
 		System.out.println("--------------Test conversion-----------------");
 		Mesure a = new Mesure(14.3, new FactoryDollar());
@@ -160,5 +176,5 @@ public class TestConversion extends TestCase
 		dest = dest.convertir(new FactoryYen());
 		System.out.println(dest);
 		assertNotNull(dest);
-	}
+	}*/
 }
