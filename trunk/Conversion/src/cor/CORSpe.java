@@ -9,7 +9,7 @@ import cor.generique.COR;
  * spécialisation du template COR
  *
  */
-public abstract class CORSpe extends COR<Mesure, Unite> 
+public class CORSpe extends COR<Mesure, Unite> 
 {
 	protected double valeur;
 	protected Unite uSource, uDest;
@@ -22,14 +22,32 @@ public abstract class CORSpe extends COR<Mesure, Unite>
 	public CORSpe(double valeur, Unite source, Unite dest) {
 		this(null, valeur, source, dest);
 	}
-
+	
 	public CORSpe(COR<Mesure, Unite> suivant, double valeur, Unite source, Unite dest) {
 		super(suivant);
 		this.valeur = valeur;
 		this.uSource = source;
 		this.uDest = dest;
 	}
-
+	
+	/**
+	 * méthode a tester qui retourne la conversion inverse de l'actuel
+	 * @return
+	 */
+	public CORSpe getInverseInstance()
+	{
+		return new CORSpe(1./valeur, uDest, uSource);
+	}
+	
+	/**
+	 * méthode a tester qui retourne la conversion inverse de l'actuel
+	 * @return
+	 */
+	public CORSpe getInverseInstance(COR<Mesure, Unite> suivant)
+	{
+		return new CORSpe(suivant, 1./valeur, uDest, uSource);
+	}
+	
 	/* (non-Javadoc)
 	 * @see cor.generique.COR#_resoudre(java.lang.Object, java.lang.Object)
 	 */

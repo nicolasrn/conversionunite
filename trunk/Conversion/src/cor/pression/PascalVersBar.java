@@ -7,11 +7,9 @@ import base.mesure.Mesure;
 import base.unite.Unite;
 import base.unite.UniteCompose;
 import cor.CORSpe;
-import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurSurface;
-import cor.factory.ConvertisseurTemps;
 
-public class SolvePression extends CORSpe 
+public class PascalVersBar extends CORSpe 
 {
 	@Override
 	protected Mesure _resoudre(Unite probleme, Mesure source) 
