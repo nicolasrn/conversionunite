@@ -10,22 +10,11 @@ import cor.generique.COR;
 public class EuroVersYen extends CORSpe {
 
 	public EuroVersYen() {
-		super();
+		this(null);
 	}
 
 	public EuroVersYen(COR<Mesure, Unite> suivant) {
-		super(suivant);
-	}
-
-	@Override
-	protected Mesure _resoudre(Unite probleme, Mesure source) {
-		Mesure g = null;
-		if (probleme.equals(source.getUnite()))
-			g = source;
-		else if (probleme.equals(new FactoryYen().creerUnite()) && source.getUnite().equals(new FactoryEuro().creerUnite()))
-			g = new Mesure(source.getValeur() * 0.705119165, probleme);  
-		
-		return g;
+		super(suivant, 0.705119165, new FactoryEuro().creerUnite(), new FactoryYen().creerUnite());
 	}
 
 }

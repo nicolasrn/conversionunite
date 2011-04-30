@@ -10,22 +10,11 @@ import cor.generique.COR;
 public class DollarVersEuro extends CORSpe {
 
 	public DollarVersEuro() {
-		super();
+		this(null);
 	}
 
 	public DollarVersEuro(COR<Mesure, Unite> suivant) {
-		super(suivant);
-	}
-
-	@Override
-	protected Mesure _resoudre(Unite probleme, Mesure source) {
-		Mesure g = null;
-		if (probleme.equals(source.getUnite()))
-			g = source;
-		else if (probleme.equals(new FactoryEuro().creerUnite()) && source.getUnite().equals(new FactoryDollar().creerUnite()))
-			g = new Mesure(source.getValeur() * 0.705119165, probleme);  
-		
-		return g;
+		super(suivant, 0.705119165, new FactoryDollar().creerUnite(), new FactoryEuro().creerUnite());
 	}
 
 }

@@ -19,4 +19,9 @@ public class Constante extends ElementFonction {
 	public double evaluer(HashMap<String, Double> val) {
 		return this.val;
 	}
+
+	@Override
+	public String ecrireEvaluation(HashMap<String, Double> val) {
+		return "" + this.val;
+	}
 }

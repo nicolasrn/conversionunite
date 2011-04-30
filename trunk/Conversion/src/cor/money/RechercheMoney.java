@@ -20,11 +20,11 @@ import cor.generique.COR;
 public class RechercheMoney extends CORSpe {
 
 	public RechercheMoney() {
-		super();
+		this(null);
 	}
 
 	public RechercheMoney(COR<Mesure, Unite> suivant) {
-		super(suivant);
+		super(suivant, 0, null, null);
 	}
 
 	@Override
@@ -87,7 +87,9 @@ public class RechercheMoney extends CORSpe {
 			g = source;
 			for (int i = 0; i < arretes.size(); i++) 
 			{
-				g = arretes.get(i).getObjDeConversion().resoudre(arretes.get(i).getExtremite().getUnite(), g);
+				CORSpe cor = arretes.get(i).getObjDeConversion();
+				Unite pb = arretes.get(i).getExtremite().getUnite();
+				g = cor.resoudre(pb, g);
 				// System.out.println(g);
 			}
 

@@ -11,4 +11,9 @@ public class GrandeurAtomique extends Grandeur {
 	public double evaluer(HashMap<String, Double> val) {
 		return val.get(this.abr);
 	}
+
+	@Override
+	public String ecrireEvaluation(HashMap<String, Double> val) {
+		return "" + val.get(this.abr);
+	}
 }

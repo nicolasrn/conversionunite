@@ -7,7 +7,7 @@ import base.mesure.Mesure;
 import base.unite.Unite;
 import base.unite.UniteCompose;
 import cor.CORSpe;
-import cor.factory.ConvertiseurDistance;
+import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurTemps;
 
 public class SolveAcceleration extends CORSpe
@@ -19,7 +19,7 @@ public class SolveAcceleration extends CORSpe
 		su = (UniteCompose) source.getUnite();
 		
 		Mesure mf = new Mesure(1, su.getFirst());
-		mf.setConvertisseur(new ConvertiseurDistance());
+		mf.setConvertisseur(new ConvertisseurDistance());
 		mf = mf.convertir(u.getFirst());
 		
 		Mesure ml = new Mesure(1, su.getLast());
