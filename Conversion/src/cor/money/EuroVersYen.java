@@ -1,5 +1,9 @@
 package cor.money;
 
+import java.util.HashMap;
+
+import base.fonction.Fonction;
+import base.grandeur.Constante;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import conversion.factory.unite.money.FactoryEuro;
@@ -14,7 +18,7 @@ public class EuroVersYen extends CORSpe {
 	}
 
 	public EuroVersYen(COR<Mesure, Unite> suivant) {
-		super(suivant, 0.705119165, new FactoryEuro().creerUnite(), new FactoryYen().creerUnite());
+		super(suivant, new Fonction(new Constante(120.340633), new HashMap<String, Double>()), new FactoryEuro().creerUnite(), new FactoryYen().creerUnite());
 	}
 
 }

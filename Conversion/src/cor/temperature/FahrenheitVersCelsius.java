@@ -3,10 +3,10 @@ package cor.temperature;
 import java.util.HashMap;
 
 import base.fonction.Fonction;
-import base.grandeur.Addition;
 import base.grandeur.Constante;
 import base.grandeur.Division;
 import base.grandeur.Multiplication;
+import base.grandeur.Soustraction;
 import base.grandeur.Variable;
 import base.mesure.Mesure;
 import base.unite.Unite;
@@ -15,14 +15,14 @@ import conversion.factory.unite.temperature.FactoryFahrenheit;
 import cor.CORSpe;
 import cor.generique.COR;
 
-public class CelsiusVersFahrenheit extends CORSpe {
+public class FahrenheitVersCelsius extends CORSpe {
 
-	public CelsiusVersFahrenheit() {
+	public FahrenheitVersCelsius() {
 		this(null);
 	}
 	
-	public CelsiusVersFahrenheit(COR<Mesure, Unite> suivant) {
-		super(suivant, new Fonction(new Addition(new Multiplication(new Variable("x"), new Division(new Constante(9), new Constante(5))), new Constante(32)), new HashMap<String, Double>()), new FactoryCelsius().creerUnite(), new FactoryFahrenheit().creerUnite());
+	public FahrenheitVersCelsius(COR<Mesure, Unite> suivant) {
+		super(suivant, new Fonction(new Multiplication(new Soustraction(new Variable("x"), new Constante(32)), new Division(new Constante(5), new Constante(9))), new HashMap<String, Double>()), new FactoryFahrenheit().creerUnite(), new FactoryCelsius().creerUnite());
 	}
 
 	/* (non-Javadoc)
@@ -33,5 +33,4 @@ public class CelsiusVersFahrenheit extends CORSpe {
 		valeur.getVariables().put("x", source.getValeur());
 		return valeur.evaluer();
 	}
-
 }

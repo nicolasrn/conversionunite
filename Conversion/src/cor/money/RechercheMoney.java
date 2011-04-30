@@ -19,14 +19,6 @@ import cor.generique.COR;
 
 public class RechercheMoney extends CORSpe {
 
-	public RechercheMoney() {
-		this(null);
-	}
-
-	public RechercheMoney(COR<Mesure, Unite> suivant) {
-		super(suivant, 0, null, null);
-	}
-
 	@Override
 	protected Mesure _resoudre(Unite probleme, Mesure source) {
 		Mesure g = null;

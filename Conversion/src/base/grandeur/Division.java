@@ -14,7 +14,7 @@ public class Division extends Operateur {
 	
 	@Override
 	public double calculer(double va, double vb) {
-		return va / vb;
+		return (double)va / vb;
 	}
 
 }

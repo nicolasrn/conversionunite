@@ -1,5 +1,9 @@
 package cor.money;
 
+import java.util.HashMap;
+
+import base.fonction.Fonction;
+import base.grandeur.Constante;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import conversion.factory.unite.money.FactoryDollar;
@@ -14,7 +18,7 @@ public class DollarVersEuro extends CORSpe {
 	}
 
 	public DollarVersEuro(COR<Mesure, Unite> suivant) {
-		super(suivant, 0.705119165, new FactoryDollar().creerUnite(), new FactoryEuro().creerUnite());
+		super(suivant, new Fonction(new Constante(0.673945276), new HashMap<String, Double>()), new FactoryDollar().creerUnite(), new FactoryEuro().creerUnite());
 	}
 
 }

@@ -1,7 +1,11 @@
 package cor.masse;
 
+import java.util.HashMap;
+
 import conversion.factory.unite.masse.FactoryGramme;
 import conversion.factory.unite.masse.FactoryKiloGramme;
+import base.fonction.Fonction;
+import base.grandeur.Constante;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import cor.CORSpe;
@@ -14,7 +18,7 @@ public class KilogrammeVersGramme extends CORSpe {
 	}
 
 	public KilogrammeVersGramme(COR<Mesure, Unite> suivant) {
-		super(suivant, 1000, new FactoryKiloGramme().creerUnite(), new FactoryGramme().creerUnite());
+		super(suivant, new Fonction(new Constante(1000), new HashMap<String, Double>()), new FactoryKiloGramme().creerUnite(), new FactoryGramme().creerUnite());
 	}
 
 }

@@ -14,14 +14,6 @@ import cor.generique.COR;
 
 public class SolveVitesse extends CORSpe {
 
-	public SolveVitesse() {
-		super();
-	}
-
-	public SolveVitesse(COR<Mesure, Unite> suivant) {
-		super(suivant, 0, null, null);
-	}
-
 	@Override
 	protected Mesure _resoudre(Unite probleme, Mesure source) {
 		/*Mesure g = null;

@@ -1,5 +1,10 @@
 package cor;
 
+import base.fonction.Fonction;
+import base.grandeur.Constante;
+import base.grandeur.Division;
+import base.grandeur.ElementFonction;
+import base.grandeur.Multiplication;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import cor.generique.COR;
@@ -11,19 +16,19 @@ import cor.generique.COR;
  */
 public class CORSpe extends COR<Mesure, Unite> 
 {
-	protected double valeur;
+	protected Fonction valeur;
 	protected Unite uSource, uDest;
 	
 	public CORSpe()
 	{
-		this(null, 0, null, null);
+		this(null, new Fonction(), null, null);
 	}
 	
-	public CORSpe(double valeur, Unite source, Unite dest) {
+	public CORSpe(Fonction valeur, Unite source, Unite dest) {
 		this(null, valeur, source, dest);
 	}
 	
-	public CORSpe(COR<Mesure, Unite> suivant, double valeur, Unite source, Unite dest) {
+	public CORSpe(COR<Mesure, Unite> suivant, Fonction valeur, Unite source, Unite dest) {
 		super(suivant);
 		this.valeur = valeur;
 		this.uSource = source;
@@ -36,7 +41,8 @@ public class CORSpe extends COR<Mesure, Unite>
 	 */
 	public CORSpe getInverseInstance()
 	{
-		return new CORSpe(1./valeur, uDest, uSource);
+		Fonction f = new Fonction(new Division(new Constante(1.0), valeur.getTete()), valeur.getVariables());
+		return new CORSpe(f, uDest, uSource);
 	}
 	
 	/**
@@ -45,7 +51,8 @@ public class CORSpe extends COR<Mesure, Unite>
 	 */
 	public CORSpe getInverseInstance(COR<Mesure, Unite> suivant)
 	{
-		return new CORSpe(suivant, 1./valeur, uDest, uSource);
+		Fonction f = new Fonction(new Division(new Constante(1.0), valeur.getTete()), valeur.getVariables());
+		return new CORSpe(suivant, f, uDest, uSource);
 	}
 	
 	/* (non-Javadoc)
@@ -57,8 +64,17 @@ public class CORSpe extends COR<Mesure, Unite>
 		if (probleme.equals(source.getUnite()))
 			g = source;
 		else if (probleme.equals(uDest) && source.getUnite().equals(uSource))
-			g = new Mesure(source.getValeur() * valeur, probleme);  
+			g = new Mesure(opererConversion(source), probleme);
 		
 		return g;
+	}
+	
+	protected double opererConversion(Mesure source)
+	{
+		ElementFonction elt = valeur.getTete();
+		Multiplication mul = new Multiplication(new Constante(source.getValeur()), elt);
+		valeur.setTete(mul);
+		
+		return valeur.evaluer();
 	}
 }
