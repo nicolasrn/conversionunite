@@ -9,6 +9,7 @@ import conversion.factory.unite.masse.FactoryKiloGramme;
 import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;
+import conversion.factory.unite.pression.FactoryAtmosphere;
 import conversion.factory.unite.pression.FactoryBar;
 import conversion.factory.unite.pression.FactoryPascal;
 import conversion.factory.unite.surface.FactoryCentiMetreCarre;
@@ -105,8 +106,9 @@ public class TestConversion extends TestCase
 		b.setConvertisseur(new ConvertisseurPression());
 		
 		Mesure d = b.convertir(new FactoryBar());
-		
+		Mesure e = b.convertir(new FactoryAtmosphere());
 		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
 	}
 	
 	public void testConversion()

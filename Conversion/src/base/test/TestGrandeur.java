@@ -3,7 +3,9 @@ package base.test;
 import java.util.HashMap;
 
 import base.grandeur.Grandeur;
+import base.grandeur.factory.ICreerGrandeur;
 import base.grandeur.factory.composite.FactoryAcceleration;
+import base.grandeur.factory.composite.FactoryForce;
 import base.grandeur.factory.composite.FactoryPression;
 import base.grandeur.factory.composite.FactorySurface;
 import base.grandeur.factory.composite.FactoryVitesse;
@@ -22,24 +24,44 @@ public class TestGrandeur extends TestCase {
 		map.put(Grandeur.Masse, 5.);
 		
 		Grandeur d;
-		FactoryVitesse fv = new FactoryVitesse();
+		ICreerGrandeur fv = new FactoryVitesse();
 		d = fv.creerGrandeur();
 		System.out.println(d + " = " + d.evaluer(map));
 		System.out.println(d + " = " + d.ecrireEvaluation(map));
 		
-		FactorySurface fs = new FactorySurface();
+		ICreerGrandeur fs = new FactorySurface();
 		d = fs.creerGrandeur();
 		System.out.println(d + " = " + d.evaluer(map));
 		System.out.println(d + " = " + d.ecrireEvaluation(map));
 		
-		FactoryAcceleration fa = new FactoryAcceleration();
+		ICreerGrandeur fa = new FactoryAcceleration();
 		d = fa.creerGrandeur();
 		System.out.println(d + " = " + d.evaluer(map));
 		System.out.println(d + " = " + d.ecrireEvaluation(map));
 		
-		FactoryPression fp = new FactoryPression();
+		ICreerGrandeur fp = new FactoryPression();
 		d = fp.creerGrandeur();
 		System.out.println(d + " = " + d.evaluer(map));
 		System.out.println(d + " = " + d.ecrireEvaluation(map));
+
+		fp = new FactoryVitesse();
+		System.out.println("vitesse : " + fp.creerGrandeur().equals(fp.creerGrandeur()));
+		assertEquals(fp.creerGrandeur().equals(fp.creerGrandeur()), true);
+		
+		fp = new FactoryAcceleration();
+		System.out.println("acceleration : " + fp.creerGrandeur().equals(fp.creerGrandeur()));
+		assertEquals(fp.creerGrandeur().equals(fp.creerGrandeur()), true);
+		
+		fp = new FactoryForce();
+		System.out.println("force : " + fp.creerGrandeur().equals(fp.creerGrandeur()));
+		assertEquals(fp.creerGrandeur().equals(fp.creerGrandeur()), true);
+		
+		fp = new FactorySurface();
+		System.out.println("surface : " + fp.creerGrandeur().equals(fp.creerGrandeur()));
+		assertEquals(fp.creerGrandeur().equals(fp.creerGrandeur()), true);
+		
+		fp = new FactoryPression();
+		System.out.println("pression : " + fp.creerGrandeur().equals(fp.creerGrandeur()));
+		assertEquals(fp.creerGrandeur().equals(fp.creerGrandeur()), true);
 	}
 }
