@@ -10,7 +10,6 @@ import base.unite.UniteCompose;
 import cor.CORSpe;
 import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurTemps;
-import cor.generique.COR;
 
 public class SolveVitesse extends CORSpe {
 
