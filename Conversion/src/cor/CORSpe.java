@@ -3,6 +3,7 @@ package cor;
 import base.fonction.Fonction;
 import base.grandeur.Constante;
 import base.grandeur.Division;
+import base.grandeur.ElementFonction;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import cor.generique.COR;
@@ -50,6 +51,18 @@ public class CORSpe extends COR<Mesure, Unite>
 	public CORSpe getInverseInstance(COR<Mesure, Unite> suivant)
 	{
 		Fonction f = new Fonction(new Division(new Constante(1.0), valeur.getTete()), valeur.getVariables());
+		return new CORSpe(suivant, f, uDest, uSource);
+	}
+	
+	/**
+	 * méthode a tester qui retourne la conversion inverse de l'actuel
+	 * @param suivant
+	 * @param elt : la fonction de conversion exécutant la conversion dans le cas ou la conversion inverse ne correspond pas à 1/valeur.f  
+	 * @return
+	 */
+	public CORSpe getInverseInstance(COR<Mesure, Unite> suivant, ElementFonction elt)
+	{
+		Fonction f = new Fonction(elt, valeur.getVariables());
 		return new CORSpe(suivant, f, uDest, uSource);
 	}
 	

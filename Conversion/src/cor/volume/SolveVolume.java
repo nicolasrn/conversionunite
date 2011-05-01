@@ -13,6 +13,7 @@ import base.grandeur.Constante;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import conversion.factory.unite.volume.FactoryDeciMetreCube;
+import conversion.factory.unite.volume.FactoryGallon;
 import conversion.factory.unite.volume.FactoryLitre;
 import conversion.factory.unite.volume.FactoryMetreCube;
 import conversion.factory.unite.volume.FactoryMiliLitre;
@@ -37,17 +38,27 @@ public class SolveVolume extends CORSpe {
 		Sommet 	m3 = new Sommet("metrecube", new FactoryMetreCube()),
 				dm3 = new Sommet("decimetre cube", new FactoryDeciMetreCube()), 
 				l = new Sommet("litre",	new FactoryLitre()),
-				ml = new Sommet("litre",	new FactoryMiliLitre());
+				ml = new Sommet("litre", new FactoryMiliLitre()),
+				gal = new Sommet("gallon", new FactoryGallon());
 		
 		graphe.addSommet(m3);
 		graphe.addSommet(dm3);
 		graphe.addSommet(l);
 		graphe.addSommet(ml);
-
+		graphe.addSommet(gal);
+		
 		graphe.addArrete(m3, new Arrete(dm3, 1, new SolveMetreCube()));
+		graphe.addArrete(dm3, new Arrete(m3, 1, new SolveMetreCube()));
+		
 		graphe.addArrete(dm3, new Arrete(l, 1, new LitreVersDeciMetreCube().getInverseInstance()));
+		graphe.addArrete(l, new Arrete(dm3, 1, new LitreVersDeciMetreCube()));
+		
 		graphe.addArrete(l, new Arrete(ml, 1, new LitreVersMiliLitre()));
-
+		graphe.addArrete(ml, new Arrete(l, 1, new LitreVersMiliLitre().getInverseInstance()));
+		
+		graphe.addArrete(l, new Arrete(gal, 1, new LitreVersGallon()));
+		graphe.addArrete(gal, new Arrete(l, 1, new LitreVersGallon().getInverseInstance()));
+		
 		Dijkstra dij = new Dijkstra(graphe);
 
 		boolean trouve = false;
