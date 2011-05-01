@@ -34,9 +34,9 @@ import junit.framework.TestCase;
 
 public class TestConversion extends TestCase 
 {
-	/*public void testMoney() throws CloneNotSupportedException 
+	public void testOperationSurMesure() throws CloneNotSupportedException 
 	{
-		System.out.println("--------------Test monney-----------------");
+		System.out.println("--------------Test operation-----------------");
 		Mesure a = new Mesure(12, new FactoryEuro());
 		Mesure b = new Mesure(6, new FactoryEuro());
 		
@@ -139,7 +139,7 @@ public class TestConversion extends TestCase
 		Mesure e = b.convertir(new FactoryAtmosphere());
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
-	}*/
+	}
 	
 	public void testTemperature() throws CloneNotSupportedException
 	{
@@ -154,7 +154,7 @@ public class TestConversion extends TestCase
 		System.out.println(d + " = " + e);
 	}
 	
-	/*public void testConversion()
+	public void testConversionAvecGraphe()
 	{
 		System.out.println("--------------Test conversion-----------------");
 		Mesure a = new Mesure(14.3, new FactoryDollar());
@@ -176,5 +176,5 @@ public class TestConversion extends TestCase
 		dest = dest.convertir(new FactoryYen());
 		System.out.println(dest);
 		assertNotNull(dest);
-	}*/
+	}
 }
