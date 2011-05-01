@@ -16,6 +16,7 @@ import conversion.factory.unite.pression.FactoryAtmosphere;
 import conversion.factory.unite.pression.FactoryBar;
 import conversion.factory.unite.pression.FactoryPascal;
 import conversion.factory.unite.surface.FactoryCentiMetreCarre;
+import conversion.factory.unite.surface.FactoryDeciMetreCarre;
 import conversion.factory.unite.surface.FactoryMetreCarre;
 import conversion.factory.unite.temperature.FactoryCelsius;
 import conversion.factory.unite.temperature.FactoryFahrenheit;
@@ -24,7 +25,6 @@ import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import conversion.factory.unite.volume.FactoryDeciMetreCube;
-import conversion.factory.unite.volume.FactoryLitre;
 import conversion.factory.unite.volume.FactoryMetreCube;
 import conversion.factory.unite.volume.FactoryMiliLitre;
 import cor.factory.ConvertisseurAcceleration;
@@ -131,8 +131,10 @@ public class TestConversion extends TestCase
 		b.setConvertisseur(new ConvertisseurSurface());
 		
 		Mesure d = b.convertir(new FactoryCentiMetreCarre());
+		Mesure e = b.convertir(new FactoryDeciMetreCarre());
 		
 		System.out.println(b + " = " + d);
+		System.out.println(b + " = " + e);
 	}
 	
 	public void testPression() throws CloneNotSupportedException

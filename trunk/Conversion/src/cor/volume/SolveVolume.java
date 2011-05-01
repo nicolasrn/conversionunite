@@ -10,22 +10,14 @@ import java.util.HashMap;
 
 import base.fonction.Fonction;
 import base.grandeur.Constante;
-import base.grandeur.Grandeur;
 import base.mesure.Mesure;
 import base.unite.Unite;
-import base.unite.UniteCompose;
-import conversion.factory.unite.money.FactoryDollar;
-import conversion.factory.unite.money.FactoryEuro;
-import conversion.factory.unite.money.FactoryYen;
 import conversion.factory.unite.volume.FactoryDeciMetreCube;
 import conversion.factory.unite.volume.FactoryLitre;
 import conversion.factory.unite.volume.FactoryMetreCube;
 import conversion.factory.unite.volume.FactoryMiliLitre;
 import cor.CORSpe;
-import cor.factory.ConvertisseurDistance;
 import cor.generique.COR;
-import cor.money.DollarVersEuro;
-import cor.money.EuroVersYen;
 
 public class SolveVolume extends CORSpe {
 
