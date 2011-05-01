@@ -5,24 +5,22 @@ import java.util.HashMap;
 import base.fonction.Fonction;
 import base.grandeur.Addition;
 import base.grandeur.Constante;
-import base.grandeur.Division;
-import base.grandeur.Multiplication;
 import base.grandeur.Variable;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import conversion.factory.unite.temperature.FactoryCelsius;
-import conversion.factory.unite.temperature.FactoryFahrenheit;
+import conversion.factory.unite.temperature.FactoryKelvin;
 import cor.CORSpe;
 import cor.generique.COR;
 
-public class CelsiusVersFahrenheit extends CORSpe {
+public class CelsiusVersKelvin extends CORSpe {
 
-	public CelsiusVersFahrenheit() {
+	public CelsiusVersKelvin() {
 		this(null);
 	}
 	
-	public CelsiusVersFahrenheit(COR<Mesure, Unite> suivant) {
-		super(suivant, new Fonction(new Addition(new Multiplication(new Variable("x"), new Division(new Constante(9), new Constante(5))), new Constante(32)), new HashMap<String, Double>()), new FactoryCelsius().creerUnite(), new FactoryFahrenheit().creerUnite());
+	public CelsiusVersKelvin(COR<Mesure, Unite> suivant) {
+		super(suivant, new Fonction(new Addition(new Variable("x"), new Constante(273.15)), new HashMap<String, Double>()), new FactoryCelsius().creerUnite(), new FactoryKelvin().creerUnite());
 	}
 	
 	/* (non-Javadoc)
