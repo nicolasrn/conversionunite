@@ -15,7 +15,6 @@ import conversion.factory.unite.money.FactoryDollar;
 import conversion.factory.unite.money.FactoryEuro;
 import conversion.factory.unite.money.FactoryYen;
 import cor.CORSpe;
-import cor.generique.COR;
 
 public class RechercheMoney extends CORSpe {
 

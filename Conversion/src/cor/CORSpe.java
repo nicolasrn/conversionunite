@@ -3,8 +3,6 @@ package cor;
 import base.fonction.Fonction;
 import base.grandeur.Constante;
 import base.grandeur.Division;
-import base.grandeur.ElementFonction;
-import base.grandeur.Multiplication;
 import base.mesure.Mesure;
 import base.unite.Unite;
 import cor.generique.COR;
@@ -71,10 +69,7 @@ public class CORSpe extends COR<Mesure, Unite>
 	
 	protected double opererConversion(Mesure source)
 	{
-		ElementFonction elt = valeur.getTete();
-		Multiplication mul = new Multiplication(new Constante(source.getValeur()), elt);
-		valeur.setTete(mul);
-		
+		valeur.addConversionValue(source.getValeur());
 		return valeur.evaluer();
 	}
 }
