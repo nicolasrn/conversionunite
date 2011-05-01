@@ -19,9 +19,14 @@ import conversion.factory.unite.surface.FactoryCentiMetreCarre;
 import conversion.factory.unite.surface.FactoryMetreCarre;
 import conversion.factory.unite.temperature.FactoryCelsius;
 import conversion.factory.unite.temperature.FactoryFahrenheit;
+import conversion.factory.unite.temperature.FactoryKelvin;
 import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
+import conversion.factory.unite.volume.FactoryDeciMetreCube;
+import conversion.factory.unite.volume.FactoryLitre;
+import conversion.factory.unite.volume.FactoryMetreCube;
+import conversion.factory.unite.volume.FactoryMiliLitre;
 import cor.factory.ConvertisseurAcceleration;
 import cor.factory.ConvertisseurDistance;
 import cor.factory.ConvertisseurMasse;
@@ -30,6 +35,7 @@ import cor.factory.ConvertisseurPression;
 import cor.factory.ConvertisseurTemperature;
 import cor.factory.ConvertisseurVitesse;
 import cor.factory.ConvertisseurSurface;
+import cor.factory.ConvertisseurVolume;
 import junit.framework.TestCase;
 
 public class TestConversion extends TestCase 
@@ -152,6 +158,22 @@ public class TestConversion extends TestCase
 		d.setConvertisseur(new ConvertisseurTemperature());
 		Mesure e = d.convertir(new FactoryCelsius());
 		System.out.println(d + " = " + e);
+		Mesure f = b.convertir(new FactoryKelvin());
+		System.out.println(b + " = " + f);
+	}
+	
+	public void testVolume() throws CloneNotSupportedException
+	{
+		System.out.println("--------------Test volume-----------------");
+		Mesure b = new Mesure(5, new FactoryMetreCube());
+		b.setConvertisseur(new ConvertisseurVolume());
+		
+		Mesure d = b.convertir(new FactoryDeciMetreCube());
+		System.out.println(b + " = " + d);
+		
+		Mesure e = b.convertir(new FactoryMiliLitre());
+		
+		System.out.println(b + " = " + e);
 	}
 	
 	public void testConversionAvecGraphe()

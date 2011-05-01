@@ -13,6 +13,7 @@ public abstract class Grandeur extends ElementFonction implements Cloneable {
 	public static final String Masse = "M";
 	
 	public static final String Temperature = "Te";
+	public static final String Volume = "Vo";
 	
 	protected String nom;
 	
