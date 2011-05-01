@@ -25,6 +25,8 @@ import conversion.factory.unite.vitesse.FactoryMetreSeconde;
 import conversion.factory.unite.vitesse.FactoryPiedMinute;
 import conversion.factory.unite.vitesse.FactoryPiedSeconde;
 import conversion.factory.unite.volume.FactoryDeciMetreCube;
+import conversion.factory.unite.volume.FactoryGallon;
+import conversion.factory.unite.volume.FactoryLitre;
 import conversion.factory.unite.volume.FactoryMetreCube;
 import conversion.factory.unite.volume.FactoryMiliLitre;
 import cor.factory.ConvertisseurAcceleration;
@@ -171,11 +173,21 @@ public class TestConversion extends TestCase
 		b.setConvertisseur(new ConvertisseurVolume());
 		
 		Mesure d = b.convertir(new FactoryDeciMetreCube());
-		System.out.println(b + " = " + d);
 		
 		Mesure e = b.convertir(new FactoryMiliLitre());
 		
+		Mesure f = new Mesure(3, new FactoryMiliLitre());
+		f.setConvertisseur(new ConvertisseurVolume());
+		Mesure g = f.convertir(new FactoryLitre());
+		
+		Mesure h = new Mesure(2, new FactoryMetreCube());
+		h.setConvertisseur(new ConvertisseurVolume());
+		Mesure i = h.convertir(new FactoryGallon());
+
+		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
+		System.out.println(f + " = " + g);
+		System.out.println(h + " = " + i); 
 	}
 	
 	public void testConversionAvecGraphe()

@@ -5,7 +5,7 @@ import base.unite.Unite;
 import base.unite.UniteCompose;
 import conversion.factory.ICreationUnite;
 
-public class FactoryGalon implements ICreationUnite {
+public class FactoryGallon implements ICreationUnite {
 
 	@Override
 	public Unite creerUnite() {
