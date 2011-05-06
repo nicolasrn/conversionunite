@@ -8,6 +8,8 @@ import graphe.Sommet;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import test.Main;
+
 import base.fonction.Fonction;
 import base.grandeur.Constante;
 import base.mesure.Mesure;
@@ -32,6 +34,7 @@ public class SolveVolume extends CORSpe {
 	
 	@Override
 	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		if (Main.trace) System.out.println("Aucun chemin trouvé via les COR création du graphe : " + this.getClass().getSimpleName());
 		Mesure g = null;
 		
 		Graphe graphe = new Graphe();
@@ -47,8 +50,8 @@ public class SolveVolume extends CORSpe {
 		graphe.addSommet(ml);
 		graphe.addSommet(gal);
 		
-		graphe.addArrete(m3, new Arrete(dm3, 1, new SolveMetreCube()));
-		graphe.addArrete(dm3, new Arrete(m3, 1, new SolveMetreCube()));
+		graphe.addArrete(m3, new Arrete(dm3, 1, new SolveCube()));
+		graphe.addArrete(dm3, new Arrete(m3, 1, new SolveCube()));
 		
 		graphe.addArrete(dm3, new Arrete(l, 1, new LitreVersDeciMetreCube().getInverseInstance()));
 		graphe.addArrete(l, new Arrete(dm3, 1, new LitreVersDeciMetreCube()));
@@ -101,6 +104,7 @@ public class SolveVolume extends CORSpe {
 			}
 			// System.out.println(arretes);
 			g = source;
+			if (Main.trace) System.out.println("chemin trouvé : ");
 			for (int i = 0; i < arretes.size(); i++) 
 			{
 				CORSpe cor = arretes.get(i).getObjDeConversion();

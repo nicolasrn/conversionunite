@@ -18,6 +18,7 @@ import conversion.factory.unite.pression.FactoryPascal;
 import conversion.factory.unite.surface.FactoryCentiMetreCarre;
 import conversion.factory.unite.surface.FactoryDeciMetreCarre;
 import conversion.factory.unite.surface.FactoryMetreCarre;
+import conversion.factory.unite.surface.FactoryPiedCarre;
 import conversion.factory.unite.temperature.FactoryCelsius;
 import conversion.factory.unite.temperature.FactoryFahrenheit;
 import conversion.factory.unite.temperature.FactoryKelvin;
@@ -129,14 +130,16 @@ public class TestConversion extends TestCase
 	public void testSurface() throws CloneNotSupportedException
 	{
 		System.out.println("--------------Test surface-----------------");
-		Mesure b = new Mesure(1, new FactoryMetreCarre());
+		Mesure b = new Mesure(12, new FactoryMetreCarre());
 		b.setConvertisseur(new ConvertisseurSurface());
 		
 		Mesure d = b.convertir(new FactoryCentiMetreCarre());
 		Mesure e = b.convertir(new FactoryDeciMetreCarre());
+		Mesure f = b.convertir(new FactoryPiedCarre());
 		
 		System.out.println(b + " = " + d);
 		System.out.println(b + " = " + e);
+		System.out.println(b + " = " + f);
 	}
 	
 	public void testPression() throws CloneNotSupportedException

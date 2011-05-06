@@ -1,5 +1,6 @@
 package base.mesure;
 
+import test.Main;
 import base.unite.Unite;
 import conversion.factory.ICreationUnite;
 import cor.CORSpe;
@@ -12,6 +13,7 @@ public class Mesure implements Cloneable{
 	
 	public Mesure(double valeur, ICreationUnite unite)
 	{
+		if (Main.trace) System.out.println("instanciation mesure");
 		this.valeur = valeur;
 		this.unite = unite.creerUnite();
 	}
@@ -63,6 +65,7 @@ public class Mesure implements Cloneable{
 	}
 
 	public Mesure convertir(Unite unite) {
+		if (Main.trace) System.out.println("début de la résolution : " + this.getClass().getSimpleName());
 		return convertisseur.resoudre(unite, this);
 	}
 	
