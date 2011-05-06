@@ -1,5 +1,6 @@
 package cor;
 
+import test.Main;
 import base.fonction.Fonction;
 import base.grandeur.Constante;
 import base.grandeur.Division;
@@ -32,6 +33,7 @@ public class CORSpe extends COR<Mesure, Unite>
 		this.valeur = valeur;
 		this.uSource = source;
 		this.uDest = dest;
+		if (Main.trace) System.out.println("instanciation COR : " + this.getClass().getSimpleName());
 	}
 	
 	/**
@@ -50,6 +52,7 @@ public class CORSpe extends COR<Mesure, Unite>
 	 */
 	public CORSpe getInverseInstance(COR<Mesure, Unite> suivant)
 	{
+		if (Main.trace) System.out.println("instanciation COR inverse : " + this.getClass().getSimpleName());
 		Fonction f = new Fonction(new Division(new Constante(1.0), valeur.getTete()), valeur.getVariables());
 		return new CORSpe(suivant, f, uDest, uSource);
 	}
@@ -71,6 +74,7 @@ public class CORSpe extends COR<Mesure, Unite>
 	 */
 	@Override
 	protected Mesure _resoudre(Unite probleme, Mesure source) {
+		if (Main.trace) System.out.println("résolution dans COR : " + this.getClass().getSimpleName());
 		Mesure g = null;
 		if (probleme.equals(source.getUnite()))
 			g = source;
